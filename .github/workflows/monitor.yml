@@ -32,7 +32,9 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git stash
           git pull --rebase origin ${GITHUB_REF#refs/heads/}
+          git stash pop || true
           git add data/playerValues.json
           git diff --staged --quiet || git commit -m "Update playerValues.json"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${GITHUB_REF#refs/heads/}
