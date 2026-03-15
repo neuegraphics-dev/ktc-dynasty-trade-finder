@@ -23,16 +23,13 @@ jobs:
       
       - run: npm run monitor
         env:
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-          SENDGRID_FROM_EMAIL: ${{ secrets.SENDGRID_FROM_EMAIL }}
-          SENDGRID_TO_EMAIL: ${{ secrets.SENDGRID_TO_EMAIL }}
-          SENDGRID_TO_EMAIL_2: ${{ secrets.SENDGRID_TO_EMAIL_2 }}
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
-      - name: Commit inventory updates
+          GMAIL_TO_EMAIL: ${{ secrets.GMAIL_TO_EMAIL }}
+      - name: Commit playerValues updates
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add data/inventory.json
-          git commit -m "Update inventory.json" || true
+          git add data/playerValues.json
+          git commit -m "Update playerValues.json" || true
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${GITHUB_REF#refs/heads/}

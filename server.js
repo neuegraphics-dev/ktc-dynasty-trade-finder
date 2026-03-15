@@ -5,13 +5,13 @@ const { runMonitor, getDatabase } = require('./competitor-monitor');
 
 const app = express();
 const DATA_DIR = path.join(__dirname, 'data');
-const DB_FILE = path.join(DATA_DIR, 'inventory.json');
+const DB_FILE = path.join(DATA_DIR, 'playerValues.json');
 
 app.use(express.json());
 app.use(express.static('public'));
 
-// API endpoint: Get current inventory data
-app.get('/api/inventory', (req, res) => {
+// API endpoint: Get current player values data
+app.get('/api/players', (req, res) => {
   try {
     if (!fs.existsSync(DB_FILE)) {
       return res.json({ competitors: {}, timestamp: null });
@@ -21,8 +21,8 @@ app.get('/api/inventory', (req, res) => {
     const response = {
       timestamp: data.lastUpdated,
       competitors: {
-        'marks': {
-          boats: data.marks || [],
+        'players': {
+          players: data.players || [],
           changes: {
             added: [],
             removed: [],
@@ -36,7 +36,7 @@ app.get('/api/inventory', (req, res) => {
     };
     res.json(response);
   } catch (error) {
-    console.error('Error reading inventory:', error);
+    console.error('Error reading player values:', error);
     res.status(500).json({ error: error.message });
   }
 });
@@ -91,7 +91,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
   console.log(`📊 Dashboard: http://localhost:${PORT}`);
-  console.log(`📡 API: http://localhost:${PORT}/api/inventory`);
+  console.log(`📡 API: http://localhost:${PORT}/api/players`);
 });
 
 module.exports = app;
