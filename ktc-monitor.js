@@ -187,10 +187,12 @@ async function fetchPage(pageNum) {
     
     const players = [];
     const $container = $(KTC_CONFIG.selectors.parentContainer);
-    
+
     if ($container.length === 0) {
       console.warn(`⚠️ Parent container not found on page ${pageNum}`);
-      return { players: [], $ };
+      // Return a snippet of the HTML to help diagnose what was actually returned
+      const snippet = $.html().slice(0, 2000);
+      return { players: [], containerFound: false, snippet };
     }
     
     $container.find(KTC_CONFIG.selectors.playerCard).each((idx, playerEl) => {
@@ -201,13 +203,11 @@ async function fetchPage(pageNum) {
     });
     
     console.log(`✅ Found ${players.length} players on page ${pageNum}`);
-    
-    // Return both players and the cheerio object for pagination info extraction
-    return { players, $ };
-    
+    return { players, containerFound: true };
+
   } catch (error) {
     console.error(`❌ Error fetching page ${pageNum}:`, error.message);
-    return { players: [], $: null };
+    return { players: [], containerFound: false, snippet: error.message };
   }
 }
 
@@ -230,6 +230,11 @@ async function fetchAllPages() {
       const pageData = await fetchPage(pageNum);
       const pageplayers = pageData.players;
       pagesFetched++;
+
+      if (!pageData.containerFound) {
+        console.warn(`⚠️ Rankings container not found on page ${pageNum}`);
+        return { players: [], containerFound: false, snippet: pageData.snippet };
+      }
 
       if (pageplayers.length === 0) {
         console.log(`⚠️ Page ${pageNum} returned 0 players — stopping`);
@@ -259,11 +264,11 @@ async function fetchAllPages() {
     }
 
     console.log(`\n✅ Fetching complete: ${allplayers.length} unique players across ${pagesFetched} pages`);
-    return allplayers;
+    return { players: allplayers, containerFound: true };
 
   } catch (error) {
     console.error(`❌ Error fetching pages:`, error.message);
-    return [];
+    return { players: [], containerFound: false, snippet: error.message };
   }
 }
 
@@ -481,10 +486,29 @@ async function monitor() {
   const previousPlayersMap = new Map(previousplayers.map(p => [p.id, p]));
 
   // Step 2: Fetch rankings + roster in parallel
-  const [currentplayers, rosterPlayers] = await Promise.all([
+  const [rankingsResult, rosterPlayers] = await Promise.all([
     fetchAllPages(),
     fetchMyRoster()
   ]);
+
+  // If the rankings container wasn't found, send a diagnostic email and abort
+  if (!rankingsResult.containerFound) {
+    console.error('❌ Rankings container not found — sending diagnostic email');
+    const diagnosticHTML = `
+      <h2 style="color:#e74c3c;">⚠️ KTC Rankings Scrape Failed</h2>
+      <p style="font-size:14px; color:#666;">Run attempted at ${new Date().toLocaleString()}</p>
+      <p style="font-size:14px; color:#333;">
+        The selector <code>#rankings-page-rankings</code> was not found in the KTC page response.
+        The selectors may need updating or KTC may be blocking the request.
+      </p>
+      <h3 style="color:#333;">HTML Snippet (first 2000 chars)</h3>
+      <pre style="background:#f5f5f5; padding:12px; font-size:11px; overflow:auto; white-space:pre-wrap;">${rankingsResult.snippet || 'No snippet available'}</pre>
+    `;
+    await sendEmail(diagnosticHTML);
+    return;
+  }
+
+  const currentplayers = rankingsResult.players;
 
   if (currentplayers.length === 0) {
     console.error('❌ No players fetched, aborting to avoid data loss');
