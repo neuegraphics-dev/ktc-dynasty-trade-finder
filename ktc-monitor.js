@@ -3,7 +3,15 @@ const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
 const nodemailer = require('nodemailer');
+const Anthropic = require('@anthropic-ai/sdk').default;
 require('dotenv').config();
+
+// ============================================
+// AI ANALYST PROMPT
+// Edit this to change what the AI analyzes.
+// It will always run with current league data as context.
+// ============================================
+const ANALYST_PROMPT = `You are a dynasty fantasy football analyst. Based on the league roster data provided, identify the top 3 trade targets I (Montreal Moonshiners) should pursue to improve my team. For each target, name the player, which team has them, why I should want them, and what I might offer in return. Be concise and direct. Then send me a trade idea that is a win win trade offer if possible, if not just give the best/fair offer available based on the keep trade cut values assigned to each players value.`;
 
 // ============================================
 // CONFIGURATION
@@ -394,6 +402,50 @@ function detectChanges(oldplayers, newplayers) {
 }
 
 // ============================================
+// AI ANALYSIS FUNCTION
+// ============================================
+
+/**
+ * Send league roster data + ANALYST_PROMPT to Claude and return the response text.
+ * Returns null if ANTHROPIC_API_KEY is not set or the call fails.
+ */
+async function fetchAIAnalysis(myTeam, allTeams) {
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.warn('⚠️ ANTHROPIC_API_KEY not set, skipping AI analysis');
+    return null;
+  }
+
+  try {
+    console.log('\n🤖 Running AI analysis...');
+    const client = new Anthropic();
+
+    // Build a compact league summary to pass as context
+    const leagueSummary = allTeams.map(team => {
+      const players = team.players.map(p => `${p.position} ${p.name} (${p.adjustedValue.toLocaleString()})`).join(', ');
+      const marker = team.name === myTeam.name ? ' ← MY TEAM' : '';
+      return `${team.name}${marker} [Total: ${team.totalValue.toLocaleString()}]\n  ${players}`;
+    }).join('\n\n');
+
+    const response = await client.messages.create({
+      model: 'claude-opus-4-6',
+      max_tokens: 1024,
+      messages: [{
+        role: 'user',
+        content: `Here are all 12 teams in my dynasty fantasy football league with their rosters and KTC 1QB values:\n\n${leagueSummary}\n\n${ANALYST_PROMPT}`
+      }]
+    });
+
+    const text = response.content.find(b => b.type === 'text')?.text ?? '';
+    console.log('✅ AI analysis complete');
+    return text;
+
+  } catch (error) {
+    console.error('❌ AI analysis failed:', error.message);
+    return null;
+  }
+}
+
+// ============================================
 // EMAIL FUNCTIONS
 // ============================================
 
@@ -401,7 +453,7 @@ function detectChanges(oldplayers, newplayers) {
  * Build HTML email content.
  * Always starts with the full roster section, then league-wide value changes and new players.
  */
-function buildEmailHTML(changes, rosterPlayers, previousPlayersMap) {
+function buildEmailHTML(changes, rosterPlayers, previousPlayersMap, aiAnalysis) {
   let html = `
     <h2 style="color: #0066cc;">📊 ${KTC_CONFIG.name}</h2>
     <p style="font-size: 14px; color: #666;">Update checked at ${new Date().toLocaleString()}</p>
@@ -488,6 +540,14 @@ function buildEmailHTML(changes, rosterPlayers, previousPlayersMap) {
         </div>
       `;
     });
+  }
+
+  // ── AI ANALYSIS ───────────────────────────────────────────────────
+  if (aiAnalysis) {
+    html += `
+      <h3 style="color: #6c3483; margin-top: 28px;">🤖 AI Trade Analysis</h3>
+      <div style="padding: 12px 16px; background: #f5eef8; border-left: 4px solid #6c3483; border-radius: 0px 8px 8px 8px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${aiAnalysis}</div>
+    `;
   }
 
   return html;
@@ -597,8 +657,11 @@ async function monitor() {
   console.log(`   ✨ New in rankings: ${changes.added.length}`);
   console.log(`   💰 Value changes (±${VALUE_CHANGE_THRESHOLD}+): ${changes.valueChanges.length}`);
 
-  // Step 4: Send email (always — roster is always included)
-  const htmlContent = buildEmailHTML(changes, rosterPlayers, previousPlayersMap);
+  // Step 4: Run AI analysis + send email
+  const allTeams = await fetchAllTeams(leagueData);
+  const myTeam = allTeams.find(t => t.name === 'Montreal Moonshiners') ?? allTeams[0];
+  const aiAnalysis = await fetchAIAnalysis(myTeam, allTeams);
+  const htmlContent = buildEmailHTML(changes, rosterPlayers, previousPlayersMap, aiAnalysis);
   await sendEmail(htmlContent);
 
   // Step 5: Save updated playerValues
@@ -606,9 +669,6 @@ async function monitor() {
   db.players = currentplayers;
   db.lastUpdated = new Date().toISOString();
   saveDatabase(db);
-
-  // Step 6: Save all team rosters
-  await fetchAllTeams(leagueData);
 
   console.log('============================================================');
   console.log('✅ Monitor run completed successfully');
