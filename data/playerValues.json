@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-16T01:06:28.500Z",
+  "lastUpdated": "2026-03-16T01:09:31.848Z",
   "players": [
     {
       "id": "bijanrobinson",
@@ -527,7 +527,7 @@
       "id": "zachcharbonnet",
       "name": "Zach Charbonnet",
       "link": "https://keeptradecut.com/dynasty-rankings/players/zach-charbonnet-1384",
-      "value": 4726
+      "value": 4723
     },
     {
       "id": "wandalerobinson",
@@ -593,7 +593,7 @@
       "id": "romeodoubs",
       "name": "Romeo Doubs",
       "link": "https://keeptradecut.com/dynasty-rankings/players/romeo-doubs-1238",
-      "value": 4527
+      "value": 4530
     },
     {
       "id": "christianwatson",
@@ -746,22 +746,22 @@
       "value": 4076
     },
     {
-      "id": "jaydenreed",
-      "name": "Jayden Reed",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/jayden-reed-1419",
-      "value": 4063
-    },
-    {
       "id": "mikeevans",
       "name": "Mike Evans",
       "link": "https://keeptradecut.com/dynasty-rankings/players/mike-evans-275",
       "value": 4060
     },
     {
+      "id": "jaydenreed",
+      "name": "Jayden Reed",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/jayden-reed-1419",
+      "value": 4060
+    },
+    {
       "id": "chubahubbard",
       "name": "Chuba Hubbard",
       "link": "https://keeptradecut.com/dynasty-rankings/players/chuba-hubbard-1014",
-      "value": 4045
+      "value": 4048
     },
     {
       "id": "courtlandsutton",
@@ -1379,7 +1379,7 @@
       "id": "hunterhenry",
       "name": "Hunter Henry",
       "link": "https://keeptradecut.com/dynasty-rankings/players/hunter-henry-212",
-      "value": 2814
+      "value": 2816
     },
     {
       "id": "brashardsmith",
@@ -1400,15 +1400,15 @@
       "value": 2727
     },
     {
-      "id": "malachifields",
-      "name": "Malachi Fields",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/malachi-fields-1973",
-      "value": 2725
-    },
-    {
       "id": "kendremiller",
       "name": "Kendre Miller",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kendre-miller-1386",
+      "value": 2722
+    },
+    {
+      "id": "malachifields",
+      "name": "Malachi Fields",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/malachi-fields-1973",
       "value": 2722
     },
     {
@@ -1643,7 +1643,7 @@
       "id": "ryanflournoy",
       "name": "Ryan Flournoy",
       "link": "https://keeptradecut.com/dynasty-rankings/players/ryan-flournoy-1642",
-      "value": 2377
+      "value": 2374
     },
     {
       "id": "najeeharris",
@@ -1667,7 +1667,7 @@
       "id": "tuatagovailoa",
       "name": "Tua Tagovailoa",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tua-tagovailoa-600",
-      "value": 2300
+      "value": 2303
     },
     {
       "id": "justinfields",
