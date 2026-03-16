@@ -12,16 +12,63 @@ require('dotenv').config();
 // Edit this to change what the AI analyzes.
 // It will always run with current league data as context.
 // ============================================
-const ANALYST_PROMPT = `You are a dynasty fantasy football analyst. 
+const ANALYST_PROMPT = `You will be creating a comprehensive fantasy sports trade analysis newsletter for a team manager. The analysis should be formatted as an HTML email newsletter with proper formatting for email readers.
 
-Step 1: Create a short report on the strengths and weakensses of team {TeamName}, along with ideas for imporving the team's weakensses. 2-4 setencences.
+Here is the team you are analyzing:
+<team_name>
+{{TEAM_NAME}}
+</team_name>
 
-Step 2: Based on the league roster data provided, create a team stregth weakness report for each team 1 setence each. Identify players {TeamName} should target on each team. Identify if there are any win win trade ideas for each team.
+Here is the league roster data for all teams:
+<league_roster_data>
+{{LEAGUE_ROSTER_DATA}}
+</league_roster_data>
 
-Step 3: Based on the league roster data provided, identify the top 3 trade targets I ({TeamName}) should pursue to improve my team. For each target, name the player, which team has them, why I should want them, and what I might offer in return. Be concise and direct. 
+Here is the player values data from Keep Trade Cut playerValues.json:
+<player_values>
+{{PLAYER_VALUES}}
+</player_values>
 
+Your task is to create a four-part trade analysis newsletter. Follow these steps:
 
-Step 4: Ensure all player trades are formatted in an HTML table for easy reading in an email HTML reader as this prompt will be em.`;
+**STEP 1: Team Self-Assessment**
+Create a short report (2-4 sentences) analyzing {{TEAM_NAME}}'s strengths and weaknesses, along with ideas for improving the team's weaknesses. Format this with an HTML bold headline followed by body text.
+
+**STEP 2: League-Wide Team Analysis**
+For each team in the league (excluding {{TEAM_NAME}}), create:
+- A 1-sentence strength/weakness report for that team
+- Identification of specific players on that team that {{TEAM_NAME}} should target
+- Any potential win-win trade ideas between {{TEAM_NAME}} and that team
+
+Format each team's analysis with an HTML bold headline for the team name, followed by the analysis in body text.
+
+**STEP 3: Top 3 Trade Targets**
+Identify the top 3 trade targets {{TEAM_NAME}} should pursue to improve the team. For each target, include:
+- Player name
+- Which team currently has them
+- Why {{TEAM_NAME}} should want them
+- What {{TEAM_NAME}} might offer in return (use player values from the provided data to ensure fair trades)
+
+Format this section with an HTML bold headline, then present each target with clear subheadings.
+
+**STEP 4: Trade Proposal Tables**
+Format all specific trade proposals in HTML tables optimized for email readers. Each table should have:
+- Minimal column headers
+- Column 1: Player name/asset from Team A with their player value
+- Column 2: Player name/asset from Team B with their player value
+- Keep wording minimal in tables - use only essential information
+
+Use the player values from the provided playerValues.json data to ensure trades are balanced and fair.
+
+**OVERALL FORMATTING REQUIREMENTS:**
+- Structure the entire output as an HTML email newsletter
+- Use HTML bold tags for all section headlines and subheadlines
+- Use simple body content formatting for analysis text
+- Keep all table content minimal - deeper analysis should be in the body text, not in tables
+- Ensure all HTML is compatible with standard email readers
+- Make the newsletter easy to scan with clear visual hierarchy
+
+Begin your newsletter now, starting with a brief introduction, then proceeding through all four steps.`;
 
 // ============================================
 // CONFIGURATION
@@ -429,20 +476,27 @@ async function fetchAIAnalysis(myTeam, allTeams) {
     console.log('\n🤖 Running AI analysis...');
     const client = new Anthropic();
 
-    // Build a compact league summary to pass as context
-    const leagueSummary = allTeams.map(team => {
-      const players = team.players.map(p => `${p.position} ${p.name} (${p.adjustedValue.toLocaleString()})`).join(', ');
+    // Build league roster data — all 12 teams with every player and their adjusted value
+    const leagueRosterData = allTeams.map(team => {
       const marker = team.name === myTeam.name ? ' ← MY TEAM' : '';
-      return `${team.name}${marker} [Total: ${team.totalValue.toLocaleString()}]\n  ${players}`;
+      const players = team.players.map(p => `  ${p.position} ${p.name}: ${p.adjustedValue.toLocaleString()}`).join('\n');
+      return `${team.name}${marker} [Total: ${team.totalValue.toLocaleString()}]\n${players}`;
     }).join('\n\n');
+
+    // Build a flat player values lookup for all rostered players
+    const playerValues = allTeams.flatMap(team =>
+      team.players.map(p => `${p.name} (${p.position}): ${p.adjustedValue.toLocaleString()}`)
+    ).join('\n');
+
+    const prompt = ANALYST_PROMPT
+      .replace(/\{\{TEAM_NAME\}\}/g, myTeam.name)
+      .replace(/\{\{LEAGUE_ROSTER_DATA\}\}/g, leagueRosterData)
+      .replace(/\{\{PLAYER_VALUES\}\}/g, playerValues);
 
     const response = await client.messages.create({
       model: 'claude-opus-4-6',
-      max_tokens: 1024,
-      messages: [{
-        role: 'user',
-        content: `Here are all 12 teams in my dynasty fantasy football league with their rosters and KTC 1QB values:\n\n${leagueSummary}\n\n${ANALYST_PROMPT.replace(/\{TeamName\}/g, myTeam.name)}`
-      }]
+      max_tokens: 4096,
+      messages: [{ role: 'user', content: prompt }]
     });
 
     const text = response.content.find(b => b.type === 'text')?.text ?? '';
