@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const nodemailer = require('nodemailer');
 const Anthropic = require('@anthropic-ai/sdk').default;
-const TeamNAme = 'Montreal Moonshiners';
+const TeamName = 'Montreal Moonshiners';
 require('dotenv').config();
 
 // ============================================
