@@ -12,7 +12,16 @@ require('dotenv').config();
 // Edit this to change what the AI analyzes.
 // It will always run with current league data as context.
 // ============================================
-const ANALYST_PROMPT = `You are a dynasty fantasy football analyst. Based on the league roster data provided, identify the top 3 trade targets I ({TeamName}) should pursue to improve my team. For each target, name the player, which team has them, why I should want them, and what I might offer in return. Be concise and direct. Then send me a trade idea that is a win win trade offer if possible, if not just give the best/fair offer available based on the keep trade cut values assigned to each players value. Provide my best 3 trade ideas ranked in order of priority of win win and best for {TeamName}. Also, Send a trade idea for each team.`;
+const ANALYST_PROMPT = `You are a dynasty fantasy football analyst. 
+
+Step 1: Create a short report on the strengths and weakensses of team {TeamName}, along with ideas for imporving the team's weakensses. 2-4 setencences.
+
+Step 2: Based on the league roster data provided, create a team stregth weakness report for each team 1 setence each. Identify players {TeamName} should target on each team. Identify if there are any win win trade ideas for each team.
+
+Step 3: Based on the league roster data provided, identify the top 3 trade targets I ({TeamName}) should pursue to improve my team. For each target, name the player, which team has them, why I should want them, and what I might offer in return. Be concise and direct. 
+
+
+Step 4: Ensure all player trades are formatted in an HTML table for easy reading in an email HTML reader as this prompt will be em.`;
 
 // ============================================
 // CONFIGURATION
