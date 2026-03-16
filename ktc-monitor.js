@@ -556,7 +556,7 @@ function buildEmailHTML(changes, rosterPlayers, previousPlayersMap, aiAnalysis) 
   if (aiAnalysis) {
     html += `
       <h3 style="color: #6c3483; margin-top: 28px;">🤖 AI Trade Analysis</h3>
-      <div style="padding: 12px 16px; background: #f5eef8; border-left: 4px solid #6c3483; border-radius: 0px 8px 8px 8px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${aiAnalysis}</div>
+      <div style="padding: 12px 16px; background: #f5eef8; border-left: 4px solid #6c3483; border-radius: 0px 8px 8px 8px; font-size: 14px; line-height: 1.6;">${aiAnalysis}</div>
     `;
   }
 
