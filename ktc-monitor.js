@@ -660,7 +660,7 @@ async function monitor() {
 
   // Step 4: Run AI analysis + send email
   const allTeams = await fetchAllTeams(leagueData);
-  const myTeam = allTeams.find(t => t.name === TeamNAme) ?? allTeams[0];
+  const myTeam = allTeams.find(t => t.name === TeamName) ?? allTeams[0];
   const aiAnalysis = await fetchAIAnalysis(myTeam, allTeams);
   const htmlContent = buildEmailHTML(changes, rosterPlayers, previousPlayersMap, aiAnalysis);
   await sendEmail(htmlContent);
