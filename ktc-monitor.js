@@ -25,10 +25,23 @@ const ROSTER_URL = () =>
   `https://keeptradecut.com/dynasty/power-rankings/team-breakdown?leagueId=1319880534624591872&platform=2&team=180481036336381952&t=${Date.now()}`;
 
 // ============================================
+// CONFIGURATION
+// ============================================
+// Subtract this from QB values to normalize for 1QB league
+const QB_1QB_ADJUSTMENT = -2250;
+
+function adjustedValue(player) {
+  return player.position === 'QB'
+    ? Math.max(0, player.value + QB_1QB_ADJUSTMENT)
+    : player.value;
+}
+
+// ============================================
 // DATABASE SETUP
 // ============================================
 const DATA_DIR = path.join(__dirname, 'data');
 const DB_FILE = path.join(DATA_DIR, 'playerValues.json');
+const ROSTERS_FILE = path.join(DATA_DIR, 'leagueRosters.json');
 
 // Ensure data directory exists
 if (!fs.existsSync(DATA_DIR)) {
@@ -112,57 +125,104 @@ function parseplayer($, playerElement) {
 
 
 /**
- * Fetch my roster from the KTC team breakdown page.
- * Returns players grouped with their position, current value, and link.
+ * Fetch and parse the KTC league page once.
+ * Returns { leagueTeams, playersMap } for use by roster functions.
  */
-async function fetchMyRoster() {
+async function fetchLeaguePageData() {
+  const rosterUrl = ROSTER_URL();
+  const response = await axios.get(rosterUrl, {
+    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
+  });
+
+  const html = response.data;
+  const leagueTeamsMatch = html.match(/var leagueTeams = (\[.*?\]);/s);
+  const playersArrayMatch = html.match(/var playersArray = (\[.*?\]);/s);
+
+  if (!leagueTeamsMatch || !playersArrayMatch) {
+    throw new Error('Could not find inline player data in page HTML');
+  }
+
+  const leagueTeams = JSON.parse(leagueTeamsMatch[1]);
+  const playersArray = JSON.parse(playersArrayMatch[1]);
+  const playersMap = new Map(playersArray.map(p => [p.playerID, p]));
+
+  return { leagueTeams, playersMap };
+}
+
+/**
+ * Build a roster array from a team entry and the shared playersMap.
+ */
+function buildRoster(team, playersMap) {
+  const players = [];
+  team.playerIds.forEach(pid => {
+    const p = playersMap.get(pid);
+    if (!p) return;
+    const value = p.superflexValues?.value ?? 0;
+    const link = `https://keeptradecut.com/dynasty-rankings/players/${p.slug}`;
+    players.push({ id: getplayerId(p.playerName), name: p.playerName, position: p.position, value, link });
+  });
+  return players;
+}
+
+/**
+ * Fetch my roster from the KTC team breakdown page.
+ */
+async function fetchMyRoster(leagueData) {
   try {
     console.log('\n👤 Fetching my roster...');
-    const rosterUrl = ROSTER_URL();
-    const response = await axios.get(rosterUrl, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
-    });
+    const { leagueTeams, playersMap } = leagueData;
 
-    const html = response.data;
-
-    // KTC embeds all data as inline JS variables in the HTML — no JS execution needed
-    const leagueTeamsMatch = html.match(/var leagueTeams = (\[.*?\]);/s);
-    const playersArrayMatch = html.match(/var playersArray = (\[.*?\]);/s);
-
-    if (!leagueTeamsMatch || !playersArrayMatch) {
-      console.warn('⚠️ Could not find inline player data in page HTML');
-      return [];
-    }
-
-    const leagueTeams = JSON.parse(leagueTeamsMatch[1]);
-    const playersArray = JSON.parse(playersArrayMatch[1]);
-
-    // Extract teamId from the URL
-    const teamIdMatch = rosterUrl.match(/[?&]team=(\d+)/);
+    const teamIdMatch = ROSTER_URL().match(/[?&]team=(\d+)/);
     const teamId = teamIdMatch ? teamIdMatch[1] : null;
-
     const myTeam = leagueTeams.find(t => t.teamId === teamId);
+
     if (!myTeam) {
       console.warn(`⚠️ Team ${teamId} not found in leagueTeams`);
       return [];
     }
 
-    const playersMap = new Map(playersArray.map(p => [p.playerID, p]));
-
-    const players = [];
-    myTeam.playerIds.forEach(pid => {
-      const p = playersMap.get(pid);
-      if (!p) return;
-      const value = p.superflexValues?.value ?? 0;
-      const link = `https://keeptradecut.com/dynasty-rankings/players/${p.slug}`;
-      players.push({ id: getplayerId(p.playerName), name: p.playerName, position: p.position, value, link });
-    });
-
+    const players = buildRoster(myTeam, playersMap);
     console.log(`✅ Fetched ${players.length} roster players`);
     return players;
 
   } catch (error) {
     console.error('❌ Error fetching roster:', error.message);
+    return [];
+  }
+}
+
+/**
+ * Build all 12 teams' rosters and save to leagueRosters.json.
+ */
+async function fetchAllTeams(leagueData) {
+  try {
+    console.log('\n🏈 Building all team rosters...');
+    const { leagueTeams, playersMap } = leagueData;
+
+    const teams = leagueTeams.map(team => {
+      const players = buildRoster(team, playersMap)
+        .map(p => ({ ...p, adjustedValue: adjustedValue(p) }))
+        .sort((a, b) => b.adjustedValue - a.adjustedValue);
+
+      const totalValue = players.reduce((sum, p) => sum + p.adjustedValue, 0);
+
+      return {
+        teamId: team.teamId,
+        name: team.name,
+        totalValue,
+        players
+      };
+    });
+
+    teams.sort((a, b) => b.totalValue - a.totalValue);
+
+    const data = { lastUpdated: new Date().toISOString(), teams };
+    fs.writeFileSync(ROSTERS_FILE, JSON.stringify(data, null, 2));
+    console.log(`✅ Saved ${teams.length} teams to leagueRosters.json`);
+    return teams;
+
+  } catch (error) {
+    console.error('❌ Error building team rosters:', error.message);
     return [];
   }
 }
@@ -364,7 +424,7 @@ function buildEmailHTML(changes, rosterPlayers, previousPlayersMap) {
       html += `<p style="margin: 16px 0 6px; font-size: 12px; font-weight: bold; color: #999; text-transform: uppercase; letter-spacing: 1px;">${position}</p>`;
 
       players.forEach(player => {
-        const displayValue = player.position === 'QB' ? Math.max(0, player.value - 2250) : player.value;
+        const displayValue = adjustedValue(player);
         const prev = previousPlayersMap.get(player.id);
         let changeHtml = '';
 
@@ -491,10 +551,18 @@ async function monitor() {
   console.log(`📚 Loaded ${previousplayers.length} players from previous run`);
   const previousPlayersMap = new Map(previousplayers.map(p => [p.id, p]));
 
-  // Step 2: Fetch rankings + roster in parallel
+  // Step 2: Fetch league page data once, then rankings in parallel
+  let leagueData;
+  try {
+    leagueData = await fetchLeaguePageData();
+  } catch (err) {
+    console.error('❌ Failed to fetch league page data:', err.message);
+    leagueData = { leagueTeams: [], playersMap: new Map() };
+  }
+
   const [rankingsResult, rosterPlayers] = await Promise.all([
     fetchAllPages(),
-    fetchMyRoster()
+    fetchMyRoster(leagueData)
   ]);
 
   // If the rankings container wasn't found, send a diagnostic email and abort
@@ -538,6 +606,9 @@ async function monitor() {
   db.players = currentplayers;
   db.lastUpdated = new Date().toISOString();
   saveDatabase(db);
+
+  // Step 6: Save all team rosters
+  await fetchAllTeams(leagueData);
 
   console.log('============================================================');
   console.log('✅ Monitor run completed successfully');

@@ -9,7 +9,7 @@ concurrency:
   cancel-in-progress: false
   
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 jobs:
   monitor:
@@ -38,6 +38,6 @@ jobs:
           git stash
           git pull --rebase origin ${GITHUB_REF#refs/heads/}
           git stash pop || true
-          git add data/playerValues.json
-          git diff --staged --quiet || git commit -m "Update playerValues.json"
+          git add data/playerValues.json data/leagueRosters.json
+          git diff --staged --quiet || git commit -m "Update playerValues.json and leagueRosters.json"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${GITHUB_REF#refs/heads/}
