@@ -364,6 +364,8 @@ function buildEmailHTML(changes, rosterPlayers, previousPlayersMap) {
       html += `<p style="margin: 16px 0 6px; font-size: 12px; font-weight: bold; color: #999; text-transform: uppercase; letter-spacing: 1px;">${position}</p>`;
 
       players.forEach(player => {
+        const QB_PREMIUM = player.position === 'QB' ? 2250 : 0;
+        const displayValue = player.value + QB_PREMIUM;
         const prev = previousPlayersMap.get(player.id);
         let changeHtml = '';
 
@@ -386,7 +388,7 @@ function buildEmailHTML(changes, rosterPlayers, previousPlayersMap) {
             <span style="font-weight:bold;">
               <a href="${player.link || '#'}" style="color:#0066cc; text-decoration:none;">${player.name}</a>
             </span>
-            <span style="color:#555; font-size:13px; margin-left:8px;">${player.value.toLocaleString()}${changeHtml}</span>
+            <span style="color:#555; font-size:13px; margin-left:8px;">${displayValue.toLocaleString()}${changeHtml}</span>
           </div>
         `;
       });
