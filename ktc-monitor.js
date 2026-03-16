@@ -118,39 +118,44 @@ function parseplayer($, playerElement) {
 async function fetchMyRoster() {
   try {
     console.log('\n👤 Fetching my roster...');
-    const response = await axios.get(ROSTER_URL(), {
+    const rosterUrl = ROSTER_URL();
+    const response = await axios.get(rosterUrl, {
       headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
     });
 
-    const $ = cheerio.load(response.data);
-    const $wrap = $('#power-rankings-league-team-breakdown-wrap .tb-roster-inner-wrap');
+    const html = response.data;
 
-    if ($wrap.length === 0) {
-      console.warn('⚠️ Roster container not found');
+    // KTC embeds all data as inline JS variables in the HTML — no JS execution needed
+    const leagueTeamsMatch = html.match(/var leagueTeams = (\[.*?\]);/s);
+    const playersArrayMatch = html.match(/var playersArray = (\[.*?\]);/s);
+
+    if (!leagueTeamsMatch || !playersArrayMatch) {
+      console.warn('⚠️ Could not find inline player data in page HTML');
       return [];
     }
 
+    const leagueTeams = JSON.parse(leagueTeamsMatch[1]);
+    const playersArray = JSON.parse(playersArrayMatch[1]);
+
+    // Extract teamId from the URL
+    const teamIdMatch = rosterUrl.match(/[?&]team=(\d+)/);
+    const teamId = teamIdMatch ? teamIdMatch[1] : null;
+
+    const myTeam = leagueTeams.find(t => t.teamId === teamId);
+    if (!myTeam) {
+      console.warn(`⚠️ Team ${teamId} not found in leagueTeams`);
+      return [];
+    }
+
+    const playersMap = new Map(playersArray.map(p => [p.playerID, p]));
+
     const players = [];
-
-    $wrap.find('.pr-team-players-block').each((_, block) => {
-      const $block = $(block);
-      const position = $block.find('.pr-team-players-block-header > div').first().text().trim();
-
-      $block.find('.team-player-name > p > a').each((_, playerEl) => {
-        const $player = $(playerEl);
-        const name = $player.text().trim();
-        const linkHref = $player.attr('href');
-        const link = linkHref ? (linkHref.startsWith('http') ? linkHref : 'https://keeptradecut.com' + linkHref) : null;
-
-        // Value sits in the sibling .team-player-info within the same player row
-        const $row = $player.closest('.team-player-name').siblings('.team-player-info');
-        const valueText = $row.find('.team-player-value p').first().text().trim();
-        const value = parseInt(valueText, 10) || 0;
-
-        if (name) {
-          players.push({ id: getplayerId(name), name, position, value, link });
-        }
-      });
+    myTeam.playerIds.forEach(pid => {
+      const p = playersMap.get(pid);
+      if (!p) return;
+      const value = p.superflexValues?.value ?? 0;
+      const link = `https://keeptradecut.com/dynasty-rankings/players/${p.slug}`;
+      players.push({ id: getplayerId(p.playerName), name: p.playerName, position: p.position, value, link });
     });
 
     console.log(`✅ Fetched ${players.length} roster players`);
