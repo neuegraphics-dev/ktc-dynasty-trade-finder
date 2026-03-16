@@ -364,8 +364,7 @@ function buildEmailHTML(changes, rosterPlayers, previousPlayersMap) {
       html += `<p style="margin: 16px 0 6px; font-size: 12px; font-weight: bold; color: #999; text-transform: uppercase; letter-spacing: 1px;">${position}</p>`;
 
       players.forEach(player => {
-        const QB_PREMIUM = player.position === 'QB' ? 2250 : 0;
-        const displayValue = player.value + QB_PREMIUM;
+        const displayValue = player.position === 'QB' ? Math.max(0, player.value - 2250) : player.value;
         const prev = previousPlayersMap.get(player.id);
         let changeHtml = '';
 
