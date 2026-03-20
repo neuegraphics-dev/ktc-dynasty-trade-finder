@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-20T14:03:42.636Z",
+  "lastUpdated": "2026-03-20T16:02:32.719Z",
   "players": [
     {
       "id": "bijanrobinson",
@@ -8,46 +8,46 @@
       "value": 9999
     },
     {
-      "id": "jamarrchase",
-      "name": "Ja'Marr Chase",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/ja-marr-chase-1004",
-      "value": 9995
-    },
-    {
       "id": "jahmyrgibbs",
       "name": "Jahmyr Gibbs",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jahmyr-gibbs-1415",
-      "value": 9983
+      "value": 9990
     },
     {
       "id": "jaxonsmith-njigba",
       "name": "Jaxon Smith-Njigba",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jaxon-smith-njigba-1437",
-      "value": 9973
+      "value": 9982
+    },
+    {
+      "id": "jamarrchase",
+      "name": "Ja'Marr Chase",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/ja-marr-chase-1004",
+      "value": 9980
     },
     {
       "id": "pukanacua",
       "name": "Puka Nacua",
       "link": "https://keeptradecut.com/dynasty-rankings/players/puka-nacua-1426",
-      "value": 9636
+      "value": 9617
     },
     {
       "id": "maliknabers",
       "name": "Malik Nabers",
       "link": "https://keeptradecut.com/dynasty-rankings/players/malik-nabers-1586",
-      "value": 8035
+      "value": 8037
     },
     {
       "id": "brockbowers",
       "name": "Brock Bowers",
       "link": "https://keeptradecut.com/dynasty-rankings/players/brock-bowers-1612",
-      "value": 7926
+      "value": 7935
     },
     {
       "id": "treymcbride",
       "name": "Trey McBride",
       "link": "https://keeptradecut.com/dynasty-rankings/players/trey-mcbride-1253",
-      "value": 7923
+      "value": 7932
     },
     {
       "id": "amon-rastbrown",
@@ -56,88 +56,88 @@
       "value": 7902
     },
     {
-      "id": "justinjefferson",
-      "name": "Justin Jefferson",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/justin-jefferson-542",
-      "value": 7883
-    },
-    {
       "id": "ashtonjeanty",
       "name": "Ashton Jeanty",
       "link": "https://keeptradecut.com/dynasty-rankings/players/ashton-jeanty-1742",
-      "value": 7879
+      "value": 7898
     },
     {
       "id": "ceedeelamb",
       "name": "CeeDee Lamb",
       "link": "https://keeptradecut.com/dynasty-rankings/players/ceedee-lamb-546",
+      "value": 7876
+    },
+    {
+      "id": "justinjefferson",
+      "name": "Justin Jefferson",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/justin-jefferson-542",
       "value": 7873
     },
     {
       "id": "jeremiyahlove",
       "name": "Jeremiyah Love",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jeremiyah-love-1934",
-      "value": 7667
+      "value": 7670
     },
     {
       "id": "joshallen",
       "name": "Josh Allen",
       "link": "https://keeptradecut.com/dynasty-rankings/players/josh-allen-365",
-      "value": 7612
+      "value": 7611
     },
     {
       "id": "devonachane",
       "name": "De'Von Achane",
       "link": "https://keeptradecut.com/dynasty-rankings/players/de-von-achane-1398",
-      "value": 7430
+      "value": 7425
     },
     {
       "id": "drakelondon",
       "name": "Drake London",
       "link": "https://keeptradecut.com/dynasty-rankings/players/drake-london-1268",
-      "value": 7382
+      "value": 7379
     },
     {
       "id": "omarionhampton",
       "name": "Omarion Hampton",
       "link": "https://keeptradecut.com/dynasty-rankings/players/omarion-hampton-1744",
-      "value": 7326
+      "value": 7325
     },
     {
       "id": "tetairoamcmillan",
       "name": "Tetairoa McMillan",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tetairoa-mcmillan-1771",
-      "value": 7212
+      "value": 7205
     },
     {
       "id": "2027early1st",
       "name": "2027 Early 1st",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2027-early-1st-1702",
-      "value": 7075
-    },
-    {
-      "id": "jamescook",
-      "name": "James Cook",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/james-cook-1231",
-      "value": 6835
+      "value": 7073
     },
     {
       "id": "jonathantaylor",
       "name": "Jonathan Taylor",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jonathan-taylor-634",
-      "value": 6835
+      "value": 6853
+    },
+    {
+      "id": "jamescook",
+      "name": "James Cook",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/james-cook-1231",
+      "value": 6837
     },
     {
       "id": "emekaegbuka",
       "name": "Emeka Egbuka",
       "link": "https://keeptradecut.com/dynasty-rankings/players/emeka-egbuka-1781",
-      "value": 6816
+      "value": 6811
     },
     {
       "id": "georgepickens",
       "name": "George Pickens",
       "link": "https://keeptradecut.com/dynasty-rankings/players/george-pickens-1279",
-      "value": 6776
+      "value": 6769
     },
     {
       "id": "drakemaye",
@@ -149,43 +149,43 @@
       "id": "colstonloveland",
       "name": "Colston Loveland",
       "link": "https://keeptradecut.com/dynasty-rankings/players/colston-loveland-1804",
-      "value": 6652
+      "value": 6648
     },
     {
       "id": "kennethwalkeriii",
       "name": "Kenneth Walker III",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kenneth-walker-iii-1227",
-      "value": 6589
+      "value": 6585
     },
     {
       "id": "garrettwilson",
       "name": "Garrett Wilson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/garrett-wilson-1270",
-      "value": 6536
+      "value": 6545
     },
     {
       "id": "2026early1st",
       "name": "2026 Early 1st",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2026-early-1st-1527",
-      "value": 6518
+      "value": 6515
     },
     {
       "id": "nicocollins",
       "name": "Nico Collins",
       "link": "https://keeptradecut.com/dynasty-rankings/players/nico-collins-1040",
-      "value": 6505
+      "value": 6511
     },
     {
       "id": "chrisolave",
       "name": "Chris Olave",
       "link": "https://keeptradecut.com/dynasty-rankings/players/chris-olave-1271",
-      "value": 6445
+      "value": 6450
     },
     {
       "id": "tylerwarren",
       "name": "Tyler Warren",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tyler-warren-1802",
-      "value": 6374
+      "value": 6378
     },
     {
       "id": "jaydendaniels",
@@ -197,7 +197,7 @@
       "id": "treveyonhenderson",
       "name": "TreVeyon Henderson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/treveyon-henderson-1743",
-      "value": 6292
+      "value": 6291
     },
     {
       "id": "romeodunze",
@@ -209,7 +209,7 @@
       "id": "breecehall",
       "name": "Breece Hall",
       "link": "https://keeptradecut.com/dynasty-rankings/players/breece-hall-1224",
-      "value": 6269
+      "value": 6265
     },
     {
       "id": "lamarjackson",
@@ -221,7 +221,7 @@
       "id": "quinshonjudkins",
       "name": "Quinshon Judkins",
       "link": "https://keeptradecut.com/dynasty-rankings/players/quinshon-judkins-1751",
-      "value": 6237
+      "value": 6231
     },
     {
       "id": "laddmcconkey",
@@ -233,37 +233,37 @@
       "id": "lutherburden",
       "name": "Luther Burden",
       "link": "https://keeptradecut.com/dynasty-rankings/players/luther-burden-1770",
-      "value": 6166
+      "value": 6162
     },
     {
       "id": "carnelltate",
       "name": "Carnell Tate",
       "link": "https://keeptradecut.com/dynasty-rankings/players/carnell-tate-1959",
-      "value": 6039
+      "value": 6044
     },
     {
       "id": "buckyirving",
       "name": "Bucky Irving",
       "link": "https://keeptradecut.com/dynasty-rankings/players/bucky-irving-1569",
-      "value": 5995
+      "value": 6005
     },
     {
       "id": "christianmccaffrey",
       "name": "Christian McCaffrey",
       "link": "https://keeptradecut.com/dynasty-rankings/players/christian-mccaffrey-283",
-      "value": 5905
+      "value": 5897
     },
     {
       "id": "2027mid1st",
       "name": "2027 Mid 1st",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2027-mid-1st-1703",
-      "value": 5880
+      "value": 5882
     },
     {
       "id": "chasebrown",
       "name": "Chase Brown",
       "link": "https://keeptradecut.com/dynasty-rankings/players/chase-brown-1396",
-      "value": 5758
+      "value": 5760
     },
     {
       "id": "makailemon",
@@ -281,73 +281,73 @@
       "id": "marvinharrisonjr",
       "name": "Marvin Harrison Jr.",
       "link": "https://keeptradecut.com/dynasty-rankings/players/marvin-harrison-jr-1585",
-      "value": 5734
+      "value": 5730
     },
     {
       "id": "kyrenwilliams",
       "name": "Kyren Williams",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kyren-williams-1226",
-      "value": 5712
+      "value": 5706
     },
     {
       "id": "teehiggins",
       "name": "Tee Higgins",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tee-higgins-543",
-      "value": 5699
+      "value": 5690
     },
     {
       "id": "joeburrow",
       "name": "Joe Burrow",
       "link": "https://keeptradecut.com/dynasty-rankings/players/joe-burrow-601",
-      "value": 5668
+      "value": 5666
     },
     {
       "id": "jaylenwaddle",
       "name": "Jaylen Waddle",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jaylen-waddle-1007",
-      "value": 5665
+      "value": 5661
     },
     {
       "id": "2028early1st",
       "name": "2028 Early 1st",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2028-early-1st-1882",
-      "value": 5616
-    },
-    {
-      "id": "rasheerice",
-      "name": "Rashee Rice",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/rashee-rice-1447",
-      "value": 5589
+      "value": 5613
     },
     {
       "id": "saquonbarkley",
       "name": "Saquon Barkley",
       "link": "https://keeptradecut.com/dynasty-rankings/players/saquon-barkley-1",
-      "value": 5587
+      "value": 5589
     },
     {
       "id": "haroldfannin",
       "name": "Harold Fannin",
       "link": "https://keeptradecut.com/dynasty-rankings/players/harold-fannin-1803",
-      "value": 5579
+      "value": 5587
+    },
+    {
+      "id": "rasheerice",
+      "name": "Rashee Rice",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/rashee-rice-1447",
+      "value": 5587
     },
     {
       "id": "calebwilliams",
       "name": "Caleb Williams",
       "link": "https://keeptradecut.com/dynasty-rankings/players/caleb-williams-1550",
-      "value": 5566
+      "value": 5569
     },
     {
       "id": "devontasmith",
       "name": "DeVonta Smith",
       "link": "https://keeptradecut.com/dynasty-rankings/players/devonta-smith-1005",
-      "value": 5559
+      "value": 5569
     },
     {
       "id": "jordyntyson",
       "name": "Jordyn Tyson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jordyn-tyson-1960",
-      "value": 5555
+      "value": 5554
     },
     {
       "id": "ajbrown",
@@ -359,7 +359,7 @@
       "id": "tuckerkraft",
       "name": "Tucker Kraft",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tucker-kraft-1418",
-      "value": 5528
+      "value": 5532
     },
     {
       "id": "2027late1st",
@@ -368,46 +368,46 @@
       "value": 5512
     },
     {
-      "id": "jaxsondart",
-      "name": "Jaxson Dart",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/jaxson-dart-1732",
-      "value": 5509
-    },
-    {
       "id": "jamesonwilliams",
       "name": "Jameson Williams",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jameson-williams-1273",
-      "value": 5502
+      "value": 5509
     },
     {
-      "id": "javontewilliams",
-      "name": "Javonte Williams",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/javonte-williams-1033",
-      "value": 5496
+      "id": "jaxsondart",
+      "name": "Jaxson Dart",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/jaxson-dart-1732",
+      "value": 5498
     },
     {
       "id": "zayflowers",
       "name": "Zay Flowers",
       "link": "https://keeptradecut.com/dynasty-rankings/players/zay-flowers-1443",
-      "value": 5493
+      "value": 5496
+    },
+    {
+      "id": "javontewilliams",
+      "name": "Javonte Williams",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/javonte-williams-1033",
+      "value": 5490
     },
     {
       "id": "2026mid1st",
       "name": "2026 Mid 1st",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2026-mid-1st-1528",
-      "value": 5491
-    },
-    {
-      "id": "travisetienne",
-      "name": "Travis Etienne",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/travis-etienne-1030",
-      "value": 5486
+      "value": 5488
     },
     {
       "id": "patrickmahomes",
       "name": "Patrick Mahomes",
       "link": "https://keeptradecut.com/dynasty-rankings/players/patrick-mahomes-272",
-      "value": 5479
+      "value": 5487
+    },
+    {
+      "id": "travisetienne",
+      "name": "Travis Etienne",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/travis-etienne-1030",
+      "value": 5477
     },
     {
       "id": "jalenhurts",
@@ -416,112 +416,106 @@
       "value": 5425
     },
     {
-      "id": "camskattebo",
-      "name": "Cam Skattebo",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/cam-skattebo-1745",
-      "value": 5386
-    },
-    {
       "id": "joshjacobs",
       "name": "Josh Jacobs",
       "link": "https://keeptradecut.com/dynasty-rankings/players/josh-jacobs-303",
-      "value": 5377
+      "value": 5388
+    },
+    {
+      "id": "camskattebo",
+      "name": "Cam Skattebo",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/cam-skattebo-1745",
+      "value": 5387
     },
     {
       "id": "justinherbert",
       "name": "Justin Herbert",
       "link": "https://keeptradecut.com/dynasty-rankings/players/justin-herbert-599",
-      "value": 5369
+      "value": 5371
     },
     {
       "id": "samlaporta",
       "name": "Sam LaPorta",
       "link": "https://keeptradecut.com/dynasty-rankings/players/sam-laporta-1429",
-      "value": 5265
+      "value": 5260
     },
     {
       "id": "alecpierce",
       "name": "Alec Pierce",
       "link": "https://keeptradecut.com/dynasty-rankings/players/alec-pierce-1285",
-      "value": 5237
+      "value": 5239
     },
     {
       "id": "2028mid1st",
       "name": "2028 Mid 1st",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2028-mid-1st-1883",
-      "value": 5210
+      "value": 5216
     },
     {
       "id": "kylepitts",
       "name": "Kyle Pitts",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kyle-pitts-1051",
-      "value": 5176
+      "value": 5172
     },
     {
       "id": "kenyonsadiq",
       "name": "Kenyon Sadiq",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kenyon-sadiq-2005",
-      "value": 5098
+      "value": 5083
     },
     {
       "id": "bonix",
       "name": "Bo Nix",
       "link": "https://keeptradecut.com/dynasty-rankings/players/bo-nix-1553",
-      "value": 5075
+      "value": 5066
     },
     {
       "id": "2026late1st",
       "name": "2026 Late 1st",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2026-late-1st-1529",
-      "value": 5038
+      "value": 5041
     },
     {
       "id": "bhayshultuten",
       "name": "Bhayshul Tuten",
       "link": "https://keeptradecut.com/dynasty-rankings/players/bhayshul-tuten-1752",
-      "value": 4990
+      "value": 4988
     },
     {
       "id": "jordanaddison",
       "name": "Jordan Addison",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jordan-addison-1420",
-      "value": 4880
+      "value": 4885
     },
     {
       "id": "djmoore",
       "name": "D.J. Moore",
       "link": "https://keeptradecut.com/dynasty-rankings/players/dj-moore-304",
-      "value": 4877
+      "value": 4883
     },
     {
       "id": "fernandomendoza",
       "name": "Fernando Mendoza",
       "link": "https://keeptradecut.com/dynasty-rankings/players/fernando-mendoza-1924",
-      "value": 4808
+      "value": 4811
     },
     {
       "id": "rjharvey",
       "name": "RJ Harvey",
       "link": "https://keeptradecut.com/dynasty-rankings/players/rj-harvey-1768",
-      "value": 4792
+      "value": 4790
     },
     {
       "id": "2028late1st",
       "name": "2028 Late 1st",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2028-late-1st-1884",
-      "value": 4789
+      "value": 4786
     },
     {
       "id": "derrickhenry",
       "name": "Derrick Henry",
       "link": "https://keeptradecut.com/dynasty-rankings/players/derrick-henry-296",
-      "value": 4771
-    },
-    {
-      "id": "orondegadsden",
-      "name": "Oronde Gadsden",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/oronde-gadsden-1799",
-      "value": 4755
+      "value": 4777
     },
     {
       "id": "zachcharbonnet",
@@ -530,28 +524,34 @@
       "value": 4753
     },
     {
-      "id": "wandalerobinson",
-      "name": "Wan'Dale Robinson",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/wan-dale-robinson-1274",
-      "value": 4680
+      "id": "orondegadsden",
+      "name": "Oronde Gadsden",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/oronde-gadsden-1799",
+      "value": 4752
     },
     {
       "id": "trevorlawrence",
       "name": "Trevor Lawrence",
       "link": "https://keeptradecut.com/dynasty-rankings/players/trevor-lawrence-1094",
-      "value": 4676
+      "value": 4683
+    },
+    {
+      "id": "wandalerobinson",
+      "name": "Wan'Dale Robinson",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/wan-dale-robinson-1274",
+      "value": 4674
     },
     {
       "id": "brockpurdy",
       "name": "Brock Purdy",
       "link": "https://keeptradecut.com/dynasty-rankings/players/brock-purdy-1214",
-      "value": 4627
+      "value": 4633
     },
     {
       "id": "michaelwilson",
       "name": "Michael Wilson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/michael-wilson-1421",
-      "value": 4612
+      "value": 4618
     },
     {
       "id": "2027early2nd",
@@ -563,109 +563,109 @@
       "id": "romeodoubs",
       "name": "Romeo Doubs",
       "link": "https://keeptradecut.com/dynasty-rankings/players/romeo-doubs-1238",
-      "value": 4604
+      "value": 4603
     },
     {
       "id": "kcconcepcion",
       "name": "KC Concepcion",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kc-concepcion-1963",
-      "value": 4599
+      "value": 4602
     },
     {
       "id": "dkmetcalf",
       "name": "DK Metcalf",
       "link": "https://keeptradecut.com/dynasty-rankings/players/dk-metcalf-224",
-      "value": 4578
+      "value": 4567
     },
     {
       "id": "rickypearsall",
       "name": "Ricky Pearsall",
       "link": "https://keeptradecut.com/dynasty-rankings/players/ricky-pearsall-1593",
-      "value": 4545
-    },
-    {
-      "id": "christianwatson",
-      "name": "Christian Watson",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/christian-watson-1248",
-      "value": 4534
+      "value": 4549
     },
     {
       "id": "jordanlove",
       "name": "Jordan Love",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jordan-love-596",
-      "value": 4531
+      "value": 4533
     },
     {
       "id": "travishunter",
       "name": "Travis Hunter",
       "link": "https://keeptradecut.com/dynasty-rankings/players/travis-hunter-1774",
-      "value": 4527
+      "value": 4531
+    },
+    {
+      "id": "christianwatson",
+      "name": "Christian Watson",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/christian-watson-1248",
+      "value": 4518
     },
     {
       "id": "kylemonangai",
       "name": "Kyle Monangai",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kyle-monangai-1766",
-      "value": 4508
+      "value": 4505
     },
     {
       "id": "dakprescott",
       "name": "Dak Prescott",
       "link": "https://keeptradecut.com/dynasty-rankings/players/dak-prescott-371",
-      "value": 4433
+      "value": 4428
     },
     {
       "id": "dandreswift",
       "name": "D'Andre Swift",
       "link": "https://keeptradecut.com/dynasty-rankings/players/d-andre-swift-639",
-      "value": 4427
+      "value": 4426
     },
     {
       "id": "parkerwashington",
       "name": "Parker Washington",
       "link": "https://keeptradecut.com/dynasty-rankings/players/parker-washington-1445",
-      "value": 4412
-    },
-    {
-      "id": "matthewgolden",
-      "name": "Matthew Golden",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/matthew-golden-1775",
-      "value": 4398
+      "value": 4418
     },
     {
       "id": "davanteadams",
       "name": "Davante Adams",
       "link": "https://keeptradecut.com/dynasty-rankings/players/davante-adams-277",
-      "value": 4395
+      "value": 4398
     },
     {
-      "id": "jaydenhiggins",
-      "name": "Jayden Higgins",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/jayden-higgins-1783",
-      "value": 4377
+      "id": "matthewgolden",
+      "name": "Matthew Golden",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/matthew-golden-1775",
+      "value": 4392
     },
     {
       "id": "tylerallgeier",
       "name": "Tyler Allgeier",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tyler-allgeier-1228",
-      "value": 4375
+      "value": 4390
+    },
+    {
+      "id": "jaydenhiggins",
+      "name": "Jayden Higgins",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/jayden-higgins-1783",
+      "value": 4380
     },
     {
       "id": "davidmontgomery",
       "name": "David Montgomery",
       "link": "https://keeptradecut.com/dynasty-rankings/players/david-montgomery-288",
-      "value": 4364
-    },
-    {
-      "id": "isaiahlikely",
-      "name": "Isaiah Likely",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/isaiah-likely-1257",
-      "value": 4353
+      "value": 4358
     },
     {
       "id": "michaelpittman",
       "name": "Michael Pittman",
       "link": "https://keeptradecut.com/dynasty-rankings/players/michael-pittman-536",
-      "value": 4353
+      "value": 4356
+    },
+    {
+      "id": "isaiahlikely",
+      "name": "Isaiah Likely",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/isaiah-likely-1257",
+      "value": 4346
     },
     {
       "id": "2026early2nd",
@@ -677,109 +677,109 @@
       "id": "bakermayfield",
       "name": "Baker Mayfield",
       "link": "https://keeptradecut.com/dynasty-rankings/players/baker-mayfield-215",
-      "value": 4267
+      "value": 4261
     },
     {
       "id": "terrymclaurin",
       "name": "Terry McLaurin",
       "link": "https://keeptradecut.com/dynasty-rankings/players/terry-mclaurin-328",
-      "value": 4219
+      "value": 4226
     },
     {
       "id": "xavierworthy",
       "name": "Xavier Worthy",
       "link": "https://keeptradecut.com/dynasty-rankings/players/xavier-worthy-1591",
-      "value": 4198
+      "value": 4189
     },
     {
       "id": "jakobimeyers",
       "name": "Jakobi Meyers",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jakobi-meyers-13",
-      "value": 4164
+      "value": 4161
     },
     {
       "id": "joshdowns",
       "name": "Josh Downs",
       "link": "https://keeptradecut.com/dynasty-rankings/players/josh-downs-1440",
-      "value": 4141
+      "value": 4135
     },
     {
       "id": "denzelboston",
       "name": "Denzel Boston",
       "link": "https://keeptradecut.com/dynasty-rankings/players/denzel-boston-1962",
-      "value": 4131
+      "value": 4121
     },
     {
       "id": "chubahubbard",
       "name": "Chuba Hubbard",
       "link": "https://keeptradecut.com/dynasty-rankings/players/chuba-hubbard-1014",
-      "value": 4118
+      "value": 4115
     },
     {
       "id": "blakecorum",
       "name": "Blake Corum",
       "link": "https://keeptradecut.com/dynasty-rankings/players/blake-corum-1564",
-      "value": 4117
+      "value": 4106
     },
     {
       "id": "quentinjohnston",
       "name": "Quentin Johnston",
       "link": "https://keeptradecut.com/dynasty-rankings/players/quentin-johnston-1441",
-      "value": 4103
+      "value": 4102
     },
     {
       "id": "jakeferguson",
       "name": "Jake Ferguson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jake-ferguson-1258",
-      "value": 4078
+      "value": 4088
     },
     {
       "id": "mikeevans",
       "name": "Mike Evans",
       "link": "https://keeptradecut.com/dynasty-rankings/players/mike-evans-275",
-      "value": 4071
-    },
-    {
-      "id": "2027mid2nd",
-      "name": "2027 Mid 2nd",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/2027-mid-2nd-1706",
-      "value": 4065
+      "value": 4074
     },
     {
       "id": "jaydenreed",
       "name": "Jayden Reed",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jayden-reed-1419",
-      "value": 4064
-    },
-    {
-      "id": "ricodowdle",
-      "name": "Rico Dowdle",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/rico-dowdle-555",
-      "value": 4062
+      "value": 4073
     },
     {
       "id": "daltonkincaid",
       "name": "Dalton Kincaid",
       "link": "https://keeptradecut.com/dynasty-rankings/players/dalton-kincaid-1428",
-      "value": 4058
+      "value": 4070
+    },
+    {
+      "id": "2027mid2nd",
+      "name": "2027 Mid 2nd",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/2027-mid-2nd-1706",
+      "value": 4068
+    },
+    {
+      "id": "ricodowdle",
+      "name": "Rico Dowdle",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/rico-dowdle-555",
+      "value": 4060
     },
     {
       "id": "jaylenwarren",
       "name": "Jaylen Warren",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jaylen-warren-1201",
-      "value": 4052
+      "value": 4034
     },
     {
       "id": "omarcooperjr",
       "name": "Omar Cooper Jr.",
       "link": "https://keeptradecut.com/dynasty-rankings/players/omar-cooper-jr-1964",
-      "value": 4010
+      "value": 4007
     },
     {
       "id": "camward",
       "name": "Cam Ward",
       "link": "https://keeptradecut.com/dynasty-rankings/players/cam-ward-1730",
-      "value": 3999
+      "value": 3996
     },
     {
       "id": "cjstroud",
@@ -791,55 +791,55 @@
       "id": "courtlandsutton",
       "name": "Courtland Sutton",
       "link": "https://keeptradecut.com/dynasty-rankings/players/courtland-sutton-226",
-      "value": 3983
+      "value": 3986
     },
     {
       "id": "georgekittle",
       "name": "George Kittle",
       "link": "https://keeptradecut.com/dynasty-rankings/players/george-kittle-298",
-      "value": 3958
+      "value": 3964
     },
     {
       "id": "samdarnold",
       "name": "Sam Darnold",
       "link": "https://keeptradecut.com/dynasty-rankings/players/sam-darnold-331",
-      "value": 3905
+      "value": 3911
     },
     {
       "id": "jalencoker",
       "name": "Jalen Coker",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jalen-coker-1653",
-      "value": 3874
-    },
-    {
-      "id": "khalilshakir",
-      "name": "Khalil Shakir",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/khalil-shakir-1278",
-      "value": 3861
+      "value": 3875
     },
     {
       "id": "kylermurray",
       "name": "Kyler Murray",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kyler-murray-379",
-      "value": 3844
+      "value": 3859
     },
     {
-      "id": "2026mid2nd",
-      "name": "2026 Mid 2nd",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/2026-mid-2nd-1531",
-      "value": 3833
+      "id": "khalilshakir",
+      "name": "Khalil Shakir",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/khalil-shakir-1278",
+      "value": 3858
     },
     {
       "id": "jadarianprice",
       "name": "Jadarian Price",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jadarian-price-1935",
-      "value": 3830
+      "value": 3833
+    },
+    {
+      "id": "2026mid2nd",
+      "name": "2026 Mid 2nd",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/2026-mid-2nd-1531",
+      "value": 3824
     },
     {
       "id": "jalenmcmillan",
       "name": "Jalen McMillan",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jalen-mcmillan-1599",
-      "value": 3812
+      "value": 3817
     },
     {
       "id": "2028early2nd",
@@ -863,67 +863,73 @@
       "id": "brentonstrange",
       "name": "Brenton Strange",
       "link": "https://keeptradecut.com/dynasty-rankings/players/brenton-strange-1461",
-      "value": 3772
+      "value": 3776
     },
     {
       "id": "kayshonboutte",
       "name": "Kayshon Boutte",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kayshon-boutte-1446",
-      "value": 3723
+      "value": 3722
     },
     {
       "id": "rhamondrestevenson",
       "name": "Rhamondre Stevenson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/rhamondre-stevenson-1036",
-      "value": 3690
+      "value": 3693
     },
     {
       "id": "rashidshaheed",
       "name": "Rashid Shaheed",
       "link": "https://keeptradecut.com/dynasty-rankings/players/rashid-shaheed-1360",
-      "value": 3687
+      "value": 3684
     },
     {
       "id": "jkdobbins",
       "name": "J.K. Dobbins",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jk-dobbins-636",
-      "value": 3684
+      "value": 3682
     },
     {
       "id": "jonahcoleman",
       "name": "Jonah Coleman",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jonah-coleman-1939",
-      "value": 3661
+      "value": 3657
     },
     {
       "id": "troyfranklin",
       "name": "Troy Franklin",
       "link": "https://keeptradecut.com/dynasty-rankings/players/troy-franklin-1590",
-      "value": 3656
-    },
-    {
-      "id": "treybenson",
-      "name": "Trey Benson",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/trey-benson-1565",
-      "value": 3631
+      "value": 3647
     },
     {
       "id": "kennethgainwell",
       "name": "Kenneth Gainwell",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kenneth-gainwell-1032",
-      "value": 3626
+      "value": 3630
+    },
+    {
+      "id": "treybenson",
+      "name": "Trey Benson",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/trey-benson-1565",
+      "value": 3628
     },
     {
       "id": "masontaylor",
       "name": "Mason Taylor",
       "link": "https://keeptradecut.com/dynasty-rankings/players/mason-taylor-1806",
-      "value": 3623
+      "value": 3625
     },
     {
       "id": "2026late2nd",
       "name": "2026 Late 2nd",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2026-late-2nd-1532",
-      "value": 3578
+      "value": 3581
+    },
+    {
+      "id": "elicayomanor",
+      "name": "Elic Ayomanor",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/elic-ayomanor-1773",
+      "value": 3577
     },
     {
       "id": "2028mid2nd",
@@ -932,16 +938,10 @@
       "value": 3573
     },
     {
-      "id": "elicayomanor",
-      "name": "Elic Ayomanor",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/elic-ayomanor-1773",
-      "value": 3573
-    },
-    {
       "id": "jonathonbrooks",
       "name": "Jonathon Brooks",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jonathon-brooks-1568",
-      "value": 3558
+      "value": 3561
     },
     {
       "id": "woodymarks",
@@ -953,7 +953,7 @@
       "id": "chrisgodwin",
       "name": "Chris Godwin",
       "link": "https://keeptradecut.com/dynasty-rankings/players/chris-godwin-299",
-      "value": 3549
+      "value": 3547
     },
     {
       "id": "patbryant",
@@ -965,19 +965,25 @@
       "id": "bryceyoung",
       "name": "Bryce Young",
       "link": "https://keeptradecut.com/dynasty-rankings/players/bryce-young-1456",
-      "value": 3536
+      "value": 3532
     },
     {
       "id": "jacorycroskey-merritt",
       "name": "Jacory Croskey-Merritt",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jacory-croskey-merritt-1832",
-      "value": 3521
+      "value": 3524
+    },
+    {
+      "id": "isaacteslaa",
+      "name": "Isaac TeSlaa",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/isaac-teslaa-1813",
+      "value": 3519
     },
     {
       "id": "jaylinnoel",
       "name": "Jaylin Noel",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jaylin-noel-1780",
-      "value": 3519
+      "value": 3516
     },
     {
       "id": "danieljones",
@@ -986,39 +992,33 @@
       "value": 3513
     },
     {
-      "id": "isaacteslaa",
-      "name": "Isaac TeSlaa",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/isaac-teslaa-1813",
-      "value": 3513
-    },
-    {
-      "id": "chimeredike",
-      "name": "Chimere Dike",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/chimere-dike-1814",
-      "value": 3510
+      "id": "treharris",
+      "name": "Tre Harris",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/tre-harris-1772",
+      "value": 3512
     },
     {
       "id": "jauanjennings",
       "name": "Jauan Jennings",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jauan-jennings-576",
-      "value": 3509
-    },
-    {
-      "id": "treharris",
-      "name": "Tre Harris",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/tre-harris-1772",
-      "value": 3506
-    },
-    {
-      "id": "ajbarner",
-      "name": "AJ Barner",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/aj-barner-1629",
-      "value": 3501
+      "value": 3510
     },
     {
       "id": "braelonallen",
       "name": "Braelon Allen",
       "link": "https://keeptradecut.com/dynasty-rankings/players/braelon-allen-1567",
+      "value": 3507
+    },
+    {
+      "id": "chimeredike",
+      "name": "Chimere Dike",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/chimere-dike-1814",
+      "value": 3504
+    },
+    {
+      "id": "ajbarner",
+      "name": "AJ Barner",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/aj-barner-1629",
       "value": 3498
     },
     {
@@ -1028,22 +1028,22 @@
       "value": 3456
     },
     {
-      "id": "terranceferguson",
-      "name": "Terrance Ferguson",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/terrance-ferguson-1807",
-      "value": 3451
-    },
-    {
       "id": "rachaadwhite",
       "name": "Rachaad White",
       "link": "https://keeptradecut.com/dynasty-rankings/players/rachaad-white-1180",
-      "value": 3445
+      "value": 3454
+    },
+    {
+      "id": "terranceferguson",
+      "name": "Terrance Ferguson",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/terrance-ferguson-1807",
+      "value": 3448
     },
     {
       "id": "toryhorton",
       "name": "Tory Horton",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tory-horton-1798",
-      "value": 3442
+      "value": 3444
     },
     {
       "id": "jordanmason",
@@ -1067,19 +1067,19 @@
       "id": "dylansampson",
       "name": "Dylan Sampson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/dylan-sampson-1747",
-      "value": 3393
+      "value": 3387
     },
     {
       "id": "tyjaespears",
       "name": "Tyjae Spears",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tyjae-spears-1417",
-      "value": 3386
+      "value": 3379
     },
     {
       "id": "tjhockenson",
       "name": "T.J. Hockenson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tj-hockenson-247",
-      "value": 3376
+      "value": 3365
     },
     {
       "id": "tonypollard",
@@ -1097,25 +1097,25 @@
       "id": "markandrews",
       "name": "Mark Andrews",
       "link": "https://keeptradecut.com/dynasty-rankings/players/mark-andrews-366",
-      "value": 3304
+      "value": 3301
     },
     {
       "id": "adonaimitchell",
       "name": "Adonai Mitchell",
       "link": "https://keeptradecut.com/dynasty-rankings/players/adonai-mitchell-1597",
-      "value": 3303
+      "value": 3301
     },
     {
       "id": "brandonaiyuk",
       "name": "Brandon Aiyuk",
       "link": "https://keeptradecut.com/dynasty-rankings/players/brandon-aiyuk-538",
-      "value": 3291
+      "value": 3297
     },
     {
       "id": "jerryjeudy",
       "name": "Jerry Jeudy",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jerry-jeudy-545",
-      "value": 3288
+      "value": 3291
     },
     {
       "id": "olliegordon",
@@ -1124,34 +1124,40 @@
       "value": 3264
     },
     {
-      "id": "elistowers",
-      "name": "Eli Stowers",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/eli-stowers-2006",
-      "value": 3246
-    },
-    {
-      "id": "dallasgoedert",
-      "name": "Dallas Goedert",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/dallas-goedert-382",
-      "value": 3241
-    },
-    {
       "id": "chigoziemokonkwo",
       "name": "Chigoziem Okonkwo",
       "link": "https://keeptradecut.com/dynasty-rankings/players/chigoziem-okonkwo-1320",
-      "value": 3236
+      "value": 3245
+    },
+    {
+      "id": "elistowers",
+      "name": "Eli Stowers",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/eli-stowers-2006",
+      "value": 3244
     },
     {
       "id": "tyronetracy",
       "name": "Tyrone Tracy",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tyrone-tracy-1632",
-      "value": 3235
+      "value": 3244
+    },
+    {
+      "id": "dallasgoedert",
+      "name": "Dallas Goedert",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/dallas-goedert-382",
+      "value": 3224
     },
     {
       "id": "marvinmims",
       "name": "Marvin Mims",
       "link": "https://keeptradecut.com/dynasty-rankings/players/marvin-mims-1442",
-      "value": 3219
+      "value": 3222
+    },
+    {
+      "id": "seantucker",
+      "name": "Sean Tucker",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/sean-tucker-1400",
+      "value": 3208
     },
     {
       "id": "elijaharroyo",
@@ -1160,16 +1166,10 @@
       "value": 3206
     },
     {
-      "id": "seantucker",
-      "name": "Sean Tucker",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/sean-tucker-1400",
-      "value": 3206
-    },
-    {
       "id": "kalebjohnson",
       "name": "Kaleb Johnson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kaleb-johnson-1748",
-      "value": 3164
+      "value": 3167
     },
     {
       "id": "kimanividal",
@@ -1178,22 +1178,22 @@
       "value": 3153
     },
     {
-      "id": "michaelpenixjr",
-      "name": "Michael Penix Jr.",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/michael-penix-jr-1554",
-      "value": 3146
-    },
-    {
       "id": "nicholassingleton",
       "name": "Nicholas Singleton",
       "link": "https://keeptradecut.com/dynasty-rankings/players/nicholas-singleton-1938",
       "value": 3144
     },
     {
+      "id": "michaelpenixjr",
+      "name": "Michael Penix Jr.",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/michael-penix-jr-1554",
+      "value": 3143
+    },
+    {
       "id": "keoncoleman",
       "name": "Keon Coleman",
       "link": "https://keeptradecut.com/dynasty-rankings/players/keon-coleman-1588",
-      "value": 3137
+      "value": 3143
     },
     {
       "id": "tretucker",
@@ -1202,28 +1202,34 @@
       "value": 3128
     },
     {
-      "id": "tysimpson",
-      "name": "Ty Simpson",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/ty-simpson-1925",
-      "value": 3103
-    },
-    {
       "id": "malikwillis",
       "name": "Malik Willis",
       "link": "https://keeptradecut.com/dynasty-rankings/players/malik-willis-1210",
-      "value": 3087
+      "value": 3103
+    },
+    {
+      "id": "tysimpson",
+      "name": "Ty Simpson",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/ty-simpson-1925",
+      "value": 3091
     },
     {
       "id": "tankdell",
       "name": "Tank Dell",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tank-dell-1438",
-      "value": 3078
+      "value": 3075
     },
     {
       "id": "deebosamuel",
       "name": "Deebo Samuel",
       "link": "https://keeptradecut.com/dynasty-rankings/players/deebo-samuel-383",
-      "value": 3037
+      "value": 3046
+    },
+    {
+      "id": "gunnarhelm",
+      "name": "Gunnar Helm",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/gunnar-helm-1805",
+      "value": 3031
     },
     {
       "id": "jackbech",
@@ -1232,70 +1238,64 @@
       "value": 3031
     },
     {
-      "id": "gunnarhelm",
-      "name": "Gunnar Helm",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/gunnar-helm-1805",
-      "value": 3028
-    },
-    {
       "id": "keatonmitchell",
       "name": "Keaton Mitchell",
       "link": "https://keeptradecut.com/dynasty-rankings/players/keaton-mitchell-1393",
-      "value": 3027
-    },
-    {
-      "id": "tezjohnson",
-      "name": "Tez Johnson",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/tez-johnson-1779",
-      "value": 3027
+      "value": 3030
     },
     {
       "id": "jjmccarthy",
       "name": "J.J. McCarthy",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jj-mccarthy-1555",
-      "value": 3023
+      "value": 3020
+    },
+    {
+      "id": "tezjohnson",
+      "name": "Tez Johnson",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/tez-johnson-1779",
+      "value": 3017
     },
     {
       "id": "tankbigsby",
       "name": "Tank Bigsby",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tank-bigsby-1401",
-      "value": 3010
+      "value": 3007
     },
     {
       "id": "theojohnson",
       "name": "Theo Johnson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/theo-johnson-1620",
-      "value": 3001
+      "value": 2998
     },
     {
       "id": "elijahsarratt",
       "name": "Elijah Sarratt",
       "link": "https://keeptradecut.com/dynasty-rankings/players/elijah-sarratt-1967",
-      "value": 2999
+      "value": 2990
     },
     {
       "id": "devinneal",
       "name": "Devin Neal",
       "link": "https://keeptradecut.com/dynasty-rankings/players/devin-neal-1746",
-      "value": 2963
+      "value": 2969
     },
     {
       "id": "tylershough",
       "name": "Tyler Shough",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tyler-shough-1739",
-      "value": 2953
+      "value": 2959
     },
     {
       "id": "emmettjohnson",
       "name": "Emmett Johnson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/emmett-johnson-1936",
-      "value": 2941
+      "value": 2938
     },
     {
       "id": "cadeotton",
       "name": "Cade Otton",
       "link": "https://keeptradecut.com/dynasty-rankings/players/cade-otton-1261",
-      "value": 2925
+      "value": 2926
     },
     {
       "id": "2027early3rd",
@@ -1307,31 +1307,31 @@
       "id": "isaiahbond",
       "name": "Isaiah Bond",
       "link": "https://keeptradecut.com/dynasty-rankings/players/isaiah-bond-1776",
-      "value": 2913
-    },
-    {
-      "id": "traviskelce",
-      "name": "Travis Kelce",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/travis-kelce-264",
-      "value": 2904
+      "value": 2912
     },
     {
       "id": "stefondiggs",
       "name": "Stefon Diggs",
       "link": "https://keeptradecut.com/dynasty-rankings/players/stefon-diggs-262",
-      "value": 2900
+      "value": 2902
+    },
+    {
+      "id": "traviskelce",
+      "name": "Travis Kelce",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/travis-kelce-264",
+      "value": 2899
     },
     {
       "id": "dontayvionwicks",
       "name": "Dontayvion Wicks",
       "link": "https://keeptradecut.com/dynasty-rankings/players/dontayvion-wicks-1448",
-      "value": 2898
+      "value": 2899
     },
     {
       "id": "jaylenwright",
       "name": "Jaylen Wright",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jaylen-wright-1581",
-      "value": 2895
+      "value": 2892
     },
     {
       "id": "juwanjohnson",
@@ -1343,13 +1343,13 @@
       "id": "isiahpacheco",
       "name": "Isiah Pacheco",
       "link": "https://keeptradecut.com/dynasty-rankings/players/isiah-pacheco-1266",
-      "value": 2869
+      "value": 2875
     },
     {
       "id": "mikewashingtonjr",
       "name": "Mike Washington Jr.",
       "link": "https://keeptradecut.com/dynasty-rankings/players/mike-washington-jr-1944",
-      "value": 2854
+      "value": 2841
     },
     {
       "id": "2026early3rd",
@@ -1361,25 +1361,19 @@
       "id": "chrisbrazzellii",
       "name": "Chris Brazzell II",
       "link": "https://keeptradecut.com/dynasty-rankings/players/chris-brazzell-ii-1971",
-      "value": 2808
-    },
-    {
-      "id": "brianrobinson",
-      "name": "Brian Robinson",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/brian-robinson-1232",
-      "value": 2798
+      "value": 2810
     },
     {
       "id": "zachariahbranch",
       "name": "Zachariah Branch",
       "link": "https://keeptradecut.com/dynasty-rankings/players/zachariah-branch-1969",
-      "value": 2798
+      "value": 2795
     },
     {
-      "id": "hunterhenry",
-      "name": "Hunter Henry",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/hunter-henry-212",
-      "value": 2794
+      "id": "brianrobinson",
+      "name": "Brian Robinson",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/brian-robinson-1232",
+      "value": 2792
     },
     {
       "id": "michaelmayer",
@@ -1388,39 +1382,39 @@
       "value": 2788
     },
     {
+      "id": "hunterhenry",
+      "name": "Hunter Henry",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/hunter-henry-212",
+      "value": 2786
+    },
+    {
       "id": "tyreekhill",
       "name": "Tyreek Hill",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tyreek-hill-286",
-      "value": 2756
+      "value": 2761
     },
     {
       "id": "jaketonges",
       "name": "Jake Tonges",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jake-tonges-1356",
-      "value": 2744
-    },
-    {
-      "id": "malikwashington",
-      "name": "Malik Washington",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/malik-washington-1623",
-      "value": 2739
+      "value": 2748
     },
     {
       "id": "brashardsmith",
       "name": "Brashard Smith",
       "link": "https://keeptradecut.com/dynasty-rankings/players/brashard-smith-1749",
-      "value": 2739
+      "value": 2742
+    },
+    {
+      "id": "malikwashington",
+      "name": "Malik Washington",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/malik-washington-1623",
+      "value": 2740
     },
     {
       "id": "chrisrodriguez",
       "name": "Chris Rodriguez",
       "link": "https://keeptradecut.com/dynasty-rankings/players/chris-rodriguez-1389",
-      "value": 2718
-    },
-    {
-      "id": "kendremiller",
-      "name": "Kendre Miller",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/kendre-miller-1386",
       "value": 2716
     },
     {
@@ -1430,16 +1424,22 @@
       "value": 2710
     },
     {
-      "id": "demariodouglas",
-      "name": "Demario Douglas",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/demario-douglas-1468",
-      "value": 2696
+      "id": "kendremiller",
+      "name": "Kendre Miller",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/kendre-miller-1386",
+      "value": 2706
     },
     {
       "id": "daltonschultz",
       "name": "Dalton Schultz",
       "link": "https://keeptradecut.com/dynasty-rankings/players/dalton-schultz-487",
-      "value": 2690
+      "value": 2696
+    },
+    {
+      "id": "demariodouglas",
+      "name": "Demario Douglas",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/demario-douglas-1468",
+      "value": 2696
     },
     {
       "id": "2026mid3rd",
@@ -1451,7 +1451,7 @@
       "id": "alvinkamara",
       "name": "Alvin Kamara",
       "link": "https://keeptradecut.com/dynasty-rankings/players/alvin-kamara-282",
-      "value": 2668
+      "value": 2671
     },
     {
       "id": "cedrictillman",
@@ -1469,7 +1469,13 @@
       "id": "trevoretienne",
       "name": "Trevor Etienne",
       "link": "https://keeptradecut.com/dynasty-rankings/players/trevor-etienne-1756",
-      "value": 2616
+      "value": 2613
+    },
+    {
+      "id": "patfreiermuth",
+      "name": "Pat Freiermuth",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/pat-freiermuth-1053",
+      "value": 2610
     },
     {
       "id": "emanuelwilson",
@@ -1478,22 +1484,16 @@
       "value": 2610
     },
     {
-      "id": "patfreiermuth",
-      "name": "Pat Freiermuth",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/pat-freiermuth-1053",
-      "value": 2607
-    },
-    {
       "id": "2028early3rd",
       "name": "2028 Early 3rd",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2028-early-3rd-1888",
-      "value": 2607
+      "value": 2604
     },
     {
       "id": "rashodbateman",
       "name": "Rashod Bateman",
       "link": "https://keeptradecut.com/dynasty-rankings/players/rashod-bateman-1070",
-      "value": 2584
+      "value": 2585
     },
     {
       "id": "2027late3rd",
@@ -1502,70 +1502,70 @@
       "value": 2575
     },
     {
-      "id": "malachifields",
-      "name": "Malachi Fields",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/malachi-fields-1973",
-      "value": 2572
-    },
-    {
       "id": "chrisbell",
       "name": "Chris Bell",
       "link": "https://keeptradecut.com/dynasty-rankings/players/chris-bell-1968",
-      "value": 2568
+      "value": 2574
     },
     {
       "id": "dontethornton",
       "name": "Dont'e Thornton",
       "link": "https://keeptradecut.com/dynasty-rankings/players/dont-e-thornton-1787",
-      "value": 2562
+      "value": 2571
     },
     {
       "id": "jalennailor",
       "name": "Jalen Nailor",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jalen-nailor-1245",
-      "value": 2561
+      "value": 2559
+    },
+    {
+      "id": "malachifields",
+      "name": "Malachi Fields",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/malachi-fields-1973",
+      "value": 2556
     },
     {
       "id": "kaytronallen",
       "name": "Kaytron Allen",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kaytron-allen-1940",
-      "value": 2558
+      "value": 2554
     },
     {
       "id": "jaydonblue",
       "name": "Jaydon Blue",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jaydon-blue-1769",
-      "value": 2535
+      "value": 2532
     },
     {
       "id": "2026late3rd",
       "name": "2026 Late 3rd",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2026-late-3rd-1535",
-      "value": 2528
+      "value": 2531
     },
     {
       "id": "colbyparkinson",
       "name": "Colby Parkinson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/colby-parkinson-565",
-      "value": 2524
+      "value": 2527
     },
     {
       "id": "darnellmooney",
       "name": "Darnell Mooney",
       "link": "https://keeptradecut.com/dynasty-rankings/players/darnell-mooney-911",
-      "value": 2524
+      "value": 2527
     },
     {
       "id": "jatavionsanders",
       "name": "Ja'Tavion Sanders",
       "link": "https://keeptradecut.com/dynasty-rankings/players/ja-tavion-sanders-1614",
-      "value": 2513
+      "value": 2522
     },
     {
       "id": "lequintallen",
       "name": "LeQuint Allen",
       "link": "https://keeptradecut.com/dynasty-rankings/players/lequint-allen-1761",
-      "value": 2496
+      "value": 2504
     },
     {
       "id": "djgiddens",
@@ -1577,37 +1577,37 @@
       "id": "jamesconner",
       "name": "James Conner",
       "link": "https://keeptradecut.com/dynasty-rankings/players/james-conner-268",
-      "value": 2485
-    },
-    {
-      "id": "colekmet",
-      "name": "Cole Kmet",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/cole-kmet-569",
-      "value": 2474
+      "value": 2491
     },
     {
       "id": "aaronjones",
       "name": "Aaron Jones",
       "link": "https://keeptradecut.com/dynasty-rankings/players/aaron-jones-301",
-      "value": 2472
+      "value": 2474
     },
     {
-      "id": "raydavis",
-      "name": "Ray Davis",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/ray-davis-1574",
-      "value": 2441
+      "id": "colekmet",
+      "name": "Cole Kmet",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/cole-kmet-569",
+      "value": 2459
     },
     {
       "id": "christiankirk",
       "name": "Christian Kirk",
       "link": "https://keeptradecut.com/dynasty-rankings/players/christian-kirk-221",
-      "value": 2439
+      "value": 2440
+    },
+    {
+      "id": "raydavis",
+      "name": "Ray Davis",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/ray-davis-1574",
+      "value": 2435
     },
     {
       "id": "germiebernard",
       "name": "Germie Bernard",
       "link": "https://keeptradecut.com/dynasty-rankings/players/germie-bernard-1965",
-      "value": 2430
+      "value": 2432
     },
     {
       "id": "isaiahdavis",
@@ -1619,31 +1619,31 @@
       "id": "2028mid3rd",
       "name": "2028 Mid 3rd",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2028-mid-3rd-1889",
-      "value": 2408
+      "value": 2411
     },
     {
       "id": "jalenmilroe",
       "name": "Jalen Milroe",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jalen-milroe-1733",
-      "value": 2407
+      "value": 2404
     },
     {
       "id": "jakobilane",
       "name": "Ja'Kobi Lane",
       "link": "https://keeptradecut.com/dynasty-rankings/players/ja-kobi-lane-1979",
-      "value": 2400
+      "value": 2393
     },
     {
       "id": "jaylinlane",
       "name": "Jaylin Lane",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jaylin-lane-1816",
-      "value": 2387
+      "value": 2390
     },
     {
       "id": "marquisebrown",
       "name": "Marquise Brown",
       "link": "https://keeptradecut.com/dynasty-rankings/players/marquise-brown-311",
-      "value": 2374
+      "value": 2388
     },
     {
       "id": "trinidadchambliss",
@@ -1655,19 +1655,19 @@
       "id": "ryanflournoy",
       "name": "Ryan Flournoy",
       "link": "https://keeptradecut.com/dynasty-rankings/players/ryan-flournoy-1642",
-      "value": 2354
+      "value": 2357
     },
     {
       "id": "bensinnott",
       "name": "Ben Sinnott",
       "link": "https://keeptradecut.com/dynasty-rankings/players/ben-sinnott-1615",
-      "value": 2333
+      "value": 2330
     },
     {
       "id": "darnellwashington",
       "name": "Darnell Washington",
       "link": "https://keeptradecut.com/dynasty-rankings/players/darnell-washington-1431",
-      "value": 2300
+      "value": 2298
     },
     {
       "id": "macjones",
@@ -1679,19 +1679,19 @@
       "id": "tuatagovailoa",
       "name": "Tua Tagovailoa",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tua-tagovailoa-600",
-      "value": 2281
+      "value": 2283
     },
     {
       "id": "2028late3rd",
       "name": "2028 Late 3rd",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2028-late-3rd-1890",
-      "value": 2267
+      "value": 2266
     },
     {
       "id": "lukemusgrave",
       "name": "Luke Musgrave",
       "link": "https://keeptradecut.com/dynasty-rankings/players/luke-musgrave-1430",
-      "value": 2261
+      "value": 2255
     },
     {
       "id": "shedeursanders",
@@ -1700,22 +1700,22 @@
       "value": 2250
     },
     {
-      "id": "najeeharris",
-      "name": "Najee Harris",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/najee-harris-1031",
-      "value": 2249
-    },
-    {
       "id": "jordanjames",
       "name": "Jordan James",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jordan-james-1755",
-      "value": 2237
+      "value": 2244
+    },
+    {
+      "id": "najeeharris",
+      "name": "Najee Harris",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/najee-harris-1031",
+      "value": 2240
     },
     {
       "id": "jalenroyals",
       "name": "Jalen Royals",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jalen-royals-1786",
-      "value": 2230
+      "value": 2228
     },
     {
       "id": "justinfields",
@@ -1724,22 +1724,22 @@
       "value": 2227
     },
     {
-      "id": "xavierhutchinson",
-      "name": "Xavier Hutchinson",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/xavier-hutchinson-1454",
-      "value": 2210
-    },
-    {
       "id": "anthonyrichardson",
       "name": "Anthony Richardson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/anthony-richardson-1405",
-      "value": 2206
+      "value": 2209
     },
     {
       "id": "tyquanthornton",
       "name": "Tyquan Thornton",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tyquan-thornton-1246",
-      "value": 2203
+      "value": 2207
+    },
+    {
+      "id": "xavierhutchinson",
+      "name": "Xavier Hutchinson",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/xavier-hutchinson-1454",
+      "value": 2207
     },
     {
       "id": "lukemccaffrey",
@@ -1751,25 +1751,25 @@
       "id": "johnmetchie",
       "name": "John Metchie",
       "link": "https://keeptradecut.com/dynasty-rankings/players/john-metchie-1276",
-      "value": 2181
+      "value": 2187
     },
     {
       "id": "marshawnlloyd",
       "name": "MarShawn Lloyd",
       "link": "https://keeptradecut.com/dynasty-rankings/players/marshawn-lloyd-1575",
-      "value": 2145
+      "value": 2149
     },
     {
       "id": "jarquezhunter",
       "name": "Jarquez Hunter",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jarquez-hunter-1764",
-      "value": 2137
+      "value": 2134
     },
     {
       "id": "evanengram",
       "name": "Evan Engram",
       "link": "https://keeptradecut.com/dynasty-rankings/players/evan-engram-229",
-      "value": 2124
+      "value": 2127
     },
     {
       "id": "calvinridley",
@@ -1781,19 +1781,25 @@
       "id": "tahjbrooks",
       "name": "Tahj Brooks",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tahj-brooks-1758",
-      "value": 2084
-    },
-    {
-      "id": "audricestime",
-      "name": "Audric Estime",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/audric-estime-1566",
-      "value": 2082
+      "value": 2087
     },
     {
       "id": "2026early4th",
       "name": "2026 Early 4th",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2026-early-4th-1536",
       "value": 2080
+    },
+    {
+      "id": "audricestime",
+      "name": "Audric Estime",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/audric-estime-1566",
+      "value": 2076
+    },
+    {
+      "id": "devaughnvele",
+      "name": "Devaughn Vele",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/devaughn-vele-1643",
+      "value": 2070
     },
     {
       "id": "2027early4th",
@@ -1808,34 +1814,28 @@
       "value": 2060
     },
     {
-      "id": "devaughnvele",
-      "name": "Devaughn Vele",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/devaughn-vele-1643",
-      "value": 2058
+      "id": "jahandotson",
+      "name": "Jahan Dotson",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/jahan-dotson-1272",
+      "value": 2056
     },
     {
       "id": "dawsonknox",
       "name": "Dawson Knox",
       "link": "https://keeptradecut.com/dynasty-rankings/players/dawson-knox-88",
-      "value": 2058
+      "value": 2055
     },
     {
       "id": "cooperkupp",
       "name": "Cooper Kupp",
       "link": "https://keeptradecut.com/dynasty-rankings/players/cooper-kupp-310",
-      "value": 2053
-    },
-    {
-      "id": "jahandotson",
-      "name": "Jahan Dotson",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/jahan-dotson-1272",
-      "value": 2052
+      "value": 2048
     },
     {
       "id": "calvinaustiniii",
       "name": "Calvin Austin III",
       "link": "https://keeptradecut.com/dynasty-rankings/players/calvin-austin-iii-1262",
-      "value": 2030
+      "value": 2036
     },
     {
       "id": "andreiiosivas",
@@ -1847,31 +1847,31 @@
       "id": "skylerbell",
       "name": "Skyler Bell",
       "link": "https://keeptradecut.com/dynasty-rankings/players/skyler-bell-1970",
-      "value": 2025
-    },
-    {
-      "id": "keenanallen",
-      "name": "Keenan Allen",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/keenan-allen-265",
       "value": 2022
-    },
-    {
-      "id": "willshipley",
-      "name": "Will Shipley",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/will-shipley-1572",
-      "value": 2021
     },
     {
       "id": "savionwilliams",
       "name": "Savion Williams",
       "link": "https://keeptradecut.com/dynasty-rankings/players/savion-williams-1796",
+      "value": 2019
+    },
+    {
+      "id": "willshipley",
+      "name": "Will Shipley",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/will-shipley-1572",
       "value": 2018
+    },
+    {
+      "id": "keenanallen",
+      "name": "Keenan Allen",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/keenan-allen-265",
+      "value": 2013
     },
     {
       "id": "keandrelambert-smith",
       "name": "KeAndre Lambert-Smith",
       "link": "https://keeptradecut.com/dynasty-rankings/players/keandre-lambert-smith-1818",
-      "value": 2003
+      "value": 2000
     },
     {
       "id": "2027mid4th",
@@ -1883,13 +1883,13 @@
       "id": "noahgray",
       "name": "Noah Gray",
       "link": "https://keeptradecut.com/dynasty-rankings/players/noah-gray-1059",
-      "value": 1985
+      "value": 1988
     },
     {
       "id": "jordanwhittington",
       "name": "Jordan Whittington",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jordan-whittington-1604",
-      "value": 1984
+      "value": 1981
     },
     {
       "id": "dariusslayton",
@@ -1901,7 +1901,13 @@
       "id": "jimmyhorn",
       "name": "Jimmy Horn",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jimmy-horn-1824",
-      "value": 1967
+      "value": 1964
+    },
+    {
+      "id": "isaacguerendo",
+      "name": "Isaac Guerendo",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/isaac-guerendo-1626",
+      "value": 1954
     },
     {
       "id": "2026mid4th",
@@ -1910,64 +1916,52 @@
       "value": 1952
     },
     {
-      "id": "isaacguerendo",
-      "name": "Isaac Guerendo",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/isaac-guerendo-1626",
-      "value": 1951
-    },
-    {
       "id": "jeromeford",
       "name": "Jerome Ford",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jerome-ford-1229",
-      "value": 1928
+      "value": 1927
     },
     {
       "id": "joshuapalmer",
       "name": "Joshua Palmer",
       "link": "https://keeptradecut.com/dynasty-rankings/players/joshua-palmer-1065",
-      "value": 1904
+      "value": 1907
     },
     {
       "id": "jaleelmclaughlin",
       "name": "Jaleel McLaughlin",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jaleel-mclaughlin-1486",
-      "value": 1898
+      "value": 1901
     },
     {
       "id": "bamknight",
       "name": "Bam Knight",
       "link": "https://keeptradecut.com/dynasty-rankings/players/bam-knight-1186",
-      "value": 1898
+      "value": 1895
     },
     {
       "id": "jalentolbert",
       "name": "Jalen Tolbert",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jalen-tolbert-1247",
-      "value": 1887
+      "value": 1893
     },
     {
       "id": "maxklare",
       "name": "Max Klare",
       "link": "https://keeptradecut.com/dynasty-rankings/players/max-klare-2009",
-      "value": 1884
+      "value": 1886
     },
     {
       "id": "2027late4th",
       "name": "2027 Late 4th",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2027-late-4th-1713",
-      "value": 1867
+      "value": 1869
     },
     {
       "id": "2028early4th",
       "name": "2028 Early 4th",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2028-early-4th-1891",
-      "value": 1863
-    },
-    {
-      "id": "antoniowilliams",
-      "name": "Antonio Williams",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/antonio-williams-1974",
-      "value": 1854
+      "value": 1865
     },
     {
       "id": "kendrickbourne",
@@ -1979,13 +1973,25 @@
       "id": "jalynnpolk",
       "name": "Ja'Lynn Polk",
       "link": "https://keeptradecut.com/dynasty-rankings/players/ja-lynn-polk-1602",
-      "value": 1847
+      "value": 1844
+    },
+    {
+      "id": "antoniowilliams",
+      "name": "Antonio Williams",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/antonio-williams-1974",
+      "value": 1838
     },
     {
       "id": "treylonburks",
       "name": "Treylon Burks",
       "link": "https://keeptradecut.com/dynasty-rankings/players/treylon-burks-1269",
       "value": 1837
+    },
+    {
+      "id": "tutuatwell",
+      "name": "Tutu Atwell",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/tutu-atwell-1078",
+      "value": 1832
     },
     {
       "id": "2026late4th",
@@ -2000,22 +2006,10 @@
       "value": 1828
     },
     {
-      "id": "tutuatwell",
-      "name": "Tutu Atwell",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/tutu-atwell-1078",
-      "value": 1826
-    },
-    {
       "id": "devinsingletary",
       "name": "Devin Singletary",
       "link": "https://keeptradecut.com/dynasty-rankings/players/devin-singletary-238",
-      "value": 1812
-    },
-    {
-      "id": "xavierrestrepo",
-      "name": "Xavier Restrepo",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/xavier-restrepo-1777",
-      "value": 1807
+      "value": 1815
     },
     {
       "id": "eftonchism",
@@ -2024,9 +2018,9 @@
       "value": 1805
     },
     {
-      "id": "jonnusmith",
-      "name": "Jonnu Smith",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/jonnu-smith-84",
+      "id": "xavierrestrepo",
+      "name": "Xavier Restrepo",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/xavier-restrepo-1777",
       "value": 1804
     },
     {
@@ -2039,6 +2033,12 @@
       "id": "tommytremble",
       "name": "Tommy Tremble",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tommy-tremble-1054",
+      "value": 1798
+    },
+    {
+      "id": "jonnusmith",
+      "name": "Jonnu Smith",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/jonnu-smith-84",
       "value": 1795
     },
     {
@@ -2048,10 +2048,10 @@
       "value": 1777
     },
     {
-      "id": "raheimsanders",
-      "name": "Raheim Sanders",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/raheim-sanders-1762",
-      "value": 1765
+      "id": "michaeltrigg",
+      "name": "Michael Trigg",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/michael-trigg-2008",
+      "value": 1763
     },
     {
       "id": "konatamumpfield",
@@ -2060,28 +2060,28 @@
       "value": 1760
     },
     {
-      "id": "michaeltrigg",
-      "name": "Michael Trigg",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/michael-trigg-2008",
-      "value": 1755
+      "id": "raheimsanders",
+      "name": "Raheim Sanders",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/raheim-sanders-1762",
+      "value": 1759
     },
     {
       "id": "dyamibrown",
       "name": "Dyami Brown",
       "link": "https://keeptradecut.com/dynasty-rankings/players/dyami-brown-1069",
-      "value": 1735
+      "value": 1729
+    },
+    {
+      "id": "devontezwalker",
+      "name": "Devontez Walker",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/devontez-walker-1592",
+      "value": 1724
     },
     {
       "id": "2028mid4th",
       "name": "2028 Mid 4th",
       "link": "https://keeptradecut.com/dynasty-rankings/players/2028-mid-4th-1892",
       "value": 1723
-    },
-    {
-      "id": "devontezwalker",
-      "name": "Devontez Walker",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/devontez-walker-1592",
-      "value": 1721
     },
     {
       "id": "olamidezaccheaus",
@@ -2099,7 +2099,7 @@
       "id": "roschonjohnson",
       "name": "Roschon Johnson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/roschon-johnson-1390",
-      "value": 1702
+      "value": 1705
     },
     {
       "id": "garrettnussmeier",
@@ -2108,40 +2108,40 @@
       "value": 1699
     },
     {
-      "id": "mikegesicki",
-      "name": "Mike Gesicki",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/mike-gesicki-330",
-      "value": 1696
-    },
-    {
       "id": "malikdavis",
       "name": "Malik Davis",
       "link": "https://keeptradecut.com/dynasty-rankings/players/malik-davis-1197",
-      "value": 1686
+      "value": 1693
     },
     {
-      "id": "jalinhyatt",
-      "name": "Jalin Hyatt",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/jalin-hyatt-1399",
-      "value": 1666
+      "id": "mikegesicki",
+      "name": "Mike Gesicki",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/mike-gesicki-330",
+      "value": 1693
     },
     {
       "id": "cadestover",
       "name": "Cade Stover",
       "link": "https://keeptradecut.com/dynasty-rankings/players/cade-stover-1613",
-      "value": 1665
+      "value": 1668
     },
     {
       "id": "joemixon",
       "name": "Joe Mixon",
       "link": "https://keeptradecut.com/dynasty-rankings/players/joe-mixon-273",
-      "value": 1659
+      "value": 1662
+    },
+    {
+      "id": "jalinhyatt",
+      "name": "Jalin Hyatt",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/jalin-hyatt-1399",
+      "value": 1660
     },
     {
       "id": "michaelcarter",
       "name": "Michael Carter",
       "link": "https://keeptradecut.com/dynasty-rankings/players/michael-carter-1035",
-      "value": 1644
+      "value": 1650
     },
     {
       "id": "demondclaiborne",
@@ -2153,13 +2153,13 @@
       "id": "jacobybrissett",
       "name": "Jacoby Brissett",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jacoby-brissett-20",
-      "value": 1614
+      "value": 1617
     },
     {
       "id": "dillongabriel",
       "name": "Dillon Gabriel",
       "link": "https://keeptradecut.com/dynasty-rankings/players/dillon-gabriel-1737",
-      "value": 1597
+      "value": 1594
     },
     {
       "id": "tyjohnson",
@@ -2171,7 +2171,7 @@
       "id": "justicehill",
       "name": "Justice Hill",
       "link": "https://keeptradecut.com/dynasty-rankings/players/justice-hill-368",
-      "value": 1589
+      "value": 1586
     },
     {
       "id": "emaridemercado",
@@ -2192,34 +2192,34 @@
       "value": 1540
     },
     {
-      "id": "quinnewers",
-      "name": "Quinn Ewers",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/quinn-ewers-1734",
-      "value": 1536
-    },
-    {
       "id": "philmafah",
       "name": "Phil Mafah",
       "link": "https://keeptradecut.com/dynasty-rankings/players/phil-mafah-1763",
-      "value": 1534
+      "value": 1540
+    },
+    {
+      "id": "quinnewers",
+      "name": "Quinn Ewers",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/quinn-ewers-1734",
+      "value": 1533
     },
     {
       "id": "tylerhigbee",
       "name": "Tyler Higbee",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tyler-higbee-159",
-      "value": 1513
+      "value": 1516
     },
     {
       "id": "tedhurst",
       "name": "Ted Hurst",
       "link": "https://keeptradecut.com/dynasty-rankings/players/ted-hurst-1982",
-      "value": 1509
+      "value": 1514
     },
     {
       "id": "gregdortch",
       "name": "Greg Dortch",
       "link": "https://keeptradecut.com/dynasty-rankings/players/greg-dortch-10",
-      "value": 1491
+      "value": 1494
     },
     {
       "id": "2028late4th",
@@ -2231,49 +2231,49 @@
       "id": "tahjwashington",
       "name": "Tahj Washington",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tahj-washington-1644",
-      "value": 1485
+      "value": 1482
     },
     {
       "id": "joemilton",
       "name": "Joe Milton",
       "link": "https://keeptradecut.com/dynasty-rankings/players/joe-milton-1556",
-      "value": 1480
+      "value": 1477
     },
     {
       "id": "rasheenali",
       "name": "Rasheen Ali",
       "link": "https://keeptradecut.com/dynasty-rankings/players/rasheen-ali-1631",
-      "value": 1480
+      "value": 1477
     },
     {
       "id": "kalelmullings",
       "name": "Kalel Mullings",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kalel-mullings-1750",
-      "value": 1480
+      "value": 1477
     },
     {
       "id": "tyrellshavers",
       "name": "Tyrell Shavers",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tyrell-shavers-1524",
-      "value": 1479
+      "value": 1473
     },
     {
       "id": "kavontaeturpin",
       "name": "KaVontae Turpin",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kavontae-turpin-1336",
-      "value": 1474
-    },
-    {
-      "id": "leveonmoss",
-      "name": "Le'Veon Moss",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/le-veon-moss-1941",
-      "value": 1460
+      "value": 1471
     },
     {
       "id": "kameronjohnson",
       "name": "Kameron Johnson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kameron-johnson-1701",
-      "value": 1456
+      "value": 1459
+    },
+    {
+      "id": "leveonmoss",
+      "name": "Le'Veon Moss",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/le-veon-moss-1941",
+      "value": 1459
     },
     {
       "id": "willhoward",
@@ -2282,15 +2282,15 @@
       "value": 1455
     },
     {
-      "id": "elijahmoore",
-      "name": "Elijah Moore",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/elijah-moore-1012",
-      "value": 1452
-    },
-    {
       "id": "erickall",
       "name": "Erick All",
       "link": "https://keeptradecut.com/dynasty-rankings/players/erick-all-1616",
+      "value": 1455
+    },
+    {
+      "id": "elijahmoore",
+      "name": "Elijah Moore",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/elijah-moore-1012",
       "value": 1452
     },
     {
@@ -2303,13 +2303,13 @@
       "id": "mackhollins",
       "name": "Mack Hollins",
       "link": "https://keeptradecut.com/dynasty-rankings/players/mack-hollins-767",
-      "value": 1443
+      "value": 1440
     },
     {
       "id": "kareemhunt",
       "name": "Kareem Hunt",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kareem-hunt-214",
-      "value": 1435
+      "value": 1438
     },
     {
       "id": "malachicorley",
@@ -2318,10 +2318,10 @@
       "value": 1432
     },
     {
-      "id": "sethmcgowan",
-      "name": "Seth McGowan",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/seth-mcgowan-1937",
-      "value": 1427
+      "id": "tylergoodson",
+      "name": "Tyler Goodson",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/tyler-goodson-1189",
+      "value": 1425
     },
     {
       "id": "georgeholani",
@@ -2330,16 +2330,10 @@
       "value": 1424
     },
     {
-      "id": "tylergoodson",
-      "name": "Tyler Goodson",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/tyler-goodson-1189",
-      "value": 1422
-    },
-    {
-      "id": "darrenwaller",
-      "name": "Darren Waller",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/darren-waller-349",
-      "value": 1416
+      "id": "sethmcgowan",
+      "name": "Seth McGowan",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/seth-mcgowan-1937",
+      "value": 1421
     },
     {
       "id": "genosmith",
@@ -2351,7 +2345,13 @@
       "id": "lukeschoonmaker",
       "name": "Luke Schoonmaker",
       "link": "https://keeptradecut.com/dynasty-rankings/players/luke-schoonmaker-1382",
-      "value": 1412
+      "value": 1409
+    },
+    {
+      "id": "darrenwaller",
+      "name": "Darren Waller",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/darren-waller-349",
+      "value": 1409
     },
     {
       "id": "damienmartinez",
@@ -2369,31 +2369,31 @@
       "id": "jackendries",
       "name": "Jack Endries",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jack-endries-2007",
-      "value": 1381
+      "value": 1378
     },
     {
       "id": "gabrieldavis",
       "name": "Gabriel Davis",
       "link": "https://keeptradecut.com/dynasty-rankings/players/gabriel-davis-533",
-      "value": 1346
+      "value": 1343
     },
     {
       "id": "jordanwatkins",
       "name": "Jordan Watkins",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jordan-watkins-1817",
+      "value": 1332
+    },
+    {
+      "id": "davisallen",
+      "name": "Davis Allen",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/davis-allen-1434",
       "value": 1329
     },
     {
       "id": "cjdaniels",
       "name": "CJ Daniels",
       "link": "https://keeptradecut.com/dynasty-rankings/players/cj-daniels-1966",
-      "value": 1328
-    },
-    {
-      "id": "davisallen",
-      "name": "Davis Allen",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/davis-allen-1434",
-      "value": 1326
+      "value": 1325
     },
     {
       "id": "liljordanhumphrey",
@@ -2408,22 +2408,22 @@
       "value": 1312
     },
     {
-      "id": "javonbaker",
-      "name": "Javon Baker",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/javon-baker-1608",
-      "value": 1306
-    },
-    {
       "id": "tylerbadie",
       "name": "Tyler Badie",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tyler-badie-1206",
-      "value": 1306
+      "value": 1309
     },
     {
       "id": "jakebobo",
       "name": "Jake Bobo",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jake-bobo-1488",
-      "value": 1303
+      "value": 1306
+    },
+    {
+      "id": "javonbaker",
+      "name": "Javon Baker",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/javon-baker-1608",
+      "value": 1306
     },
     {
       "id": "chrisbrooks",
@@ -2441,13 +2441,19 @@
       "id": "jonathanmingo",
       "name": "Jonathan Mingo",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jonathan-mingo-1450",
-      "value": 1288
+      "value": 1282
     },
     {
       "id": "dameonpierce",
       "name": "Dameon Pierce",
       "link": "https://keeptradecut.com/dynasty-rankings/players/dameon-pierce-1207",
       "value": 1274
+    },
+    {
+      "id": "mitchellevans",
+      "name": "Mitchell Evans",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/mitchell-evans-1809",
+      "value": 1270
     },
     {
       "id": "jacobcowing",
@@ -2459,31 +2465,25 @@
       "id": "deionburks",
       "name": "Deion Burks",
       "link": "https://keeptradecut.com/dynasty-rankings/players/deion-burks-1972",
-      "value": 1268
-    },
-    {
-      "id": "mitchellevans",
-      "name": "Mitchell Evans",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/mitchell-evans-1809",
-      "value": 1267
+      "value": 1265
     },
     {
       "id": "jmaritaylor",
       "name": "J'Mari Taylor",
       "link": "https://keeptradecut.com/dynasty-rankings/players/j-mari-taylor-1949",
-      "value": 1263
+      "value": 1260
     },
     {
       "id": "donovanedwards",
       "name": "Donovan Edwards",
       "link": "https://keeptradecut.com/dynasty-rankings/players/donovan-edwards-1757",
-      "value": 1256
+      "value": 1259
     },
     {
       "id": "zachertz",
       "name": "Zach Ertz",
       "link": "https://keeptradecut.com/dynasty-rankings/players/zach-ertz-305",
-      "value": 1255
+      "value": 1252
     },
     {
       "id": "ariansmith",
@@ -2495,7 +2495,7 @@
       "id": "brevinjordan",
       "name": "Brevin Jordan",
       "link": "https://keeptradecut.com/dynasty-rankings/players/brevin-jordan-1052",
-      "value": 1228
+      "value": 1232
     },
     {
       "id": "bomelton",
@@ -2513,7 +2513,7 @@
       "id": "israelabanikanda",
       "name": "Israel Abanikanda",
       "link": "https://keeptradecut.com/dynasty-rankings/players/israel-abanikanda-1383",
-      "value": 1172
+      "value": 1173
     },
     {
       "id": "skyymoore",
@@ -2522,22 +2522,22 @@
       "value": 1169
     },
     {
-      "id": "masontipton",
-      "name": "Mason Tipton",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/mason-tipton-1686",
-      "value": 1167
-    },
-    {
       "id": "isaiahhodgins",
       "name": "Isaiah Hodgins",
       "link": "https://keeptradecut.com/dynasty-rankings/players/isaiah-hodgins-561",
-      "value": 1164
+      "value": 1167
+    },
+    {
+      "id": "masontipton",
+      "name": "Mason Tipton",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/mason-tipton-1686",
+      "value": 1163
     },
     {
       "id": "sionevaki",
       "name": "Sione Vaki",
       "link": "https://keeptradecut.com/dynasty-rankings/players/sione-vaki-1627",
-      "value": 1154
+      "value": 1161
     },
     {
       "id": "cadeklubnik",
@@ -2561,19 +2561,19 @@
       "id": "tylerjohnson",
       "name": "Tyler Johnson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/tyler-johnson-572",
-      "value": 1125
-    },
-    {
-      "id": "barionbrown",
-      "name": "Barion Brown",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/barion-brown-2003",
-      "value": 1124
+      "value": 1128
     },
     {
       "id": "jameiswinston",
       "name": "Jameis Winston",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jameis-winston-413",
       "value": 1122
+    },
+    {
+      "id": "barionbrown",
+      "name": "Barion Brown",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/barion-brown-2003",
+      "value": 1121
     },
     {
       "id": "deucevaughn",
@@ -2585,7 +2585,7 @@
       "id": "terrelljennings",
       "name": "Terrell Jennings",
       "link": "https://keeptradecut.com/dynasty-rankings/players/terrell-jennings-1720",
-      "value": 1112
+      "value": 1111
     },
     {
       "id": "brockwright",
@@ -2600,16 +2600,16 @@
       "value": 1093
     },
     {
+      "id": "nickchubb",
+      "name": "Nick Chubb",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/nick-chubb-274",
+      "value": 1087
+    },
+    {
       "id": "rileyleonard",
       "name": "Riley Leonard",
       "link": "https://keeptradecut.com/dynasty-rankings/players/riley-leonard-1735",
       "value": 1085
-    },
-    {
-      "id": "nickchubb",
-      "name": "Nick Chubb",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/nick-chubb-274",
-      "value": 1084
     },
     {
       "id": "jamarithrash",
@@ -2630,21 +2630,15 @@
       "value": 1065
     },
     {
-      "id": "jeremymcnichols",
-      "name": "Jeremy McNichols",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/jeremy-mcnichols-782",
-      "value": 1063
-    },
-    {
-      "id": "demarcusrobinson",
-      "name": "Demarcus Robinson",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/demarcus-robinson-52",
-      "value": 1058
-    },
-    {
       "id": "nickwestbrook-ikhine",
       "name": "Nick Westbrook-Ikhine",
       "link": "https://keeptradecut.com/dynasty-rankings/players/nick-westbrook-ikhine-950",
+      "value": 1060
+    },
+    {
+      "id": "jeremymcnichols",
+      "name": "Jeremy McNichols",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/jeremy-mcnichols-782",
       "value": 1057
     },
     {
@@ -2652,6 +2646,12 @@
       "name": "Luke Altmyer",
       "link": "https://keeptradecut.com/dynasty-rankings/players/luke-altmyer-1932",
       "value": 1056
+    },
+    {
+      "id": "demarcusrobinson",
+      "name": "Demarcus Robinson",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/demarcus-robinson-52",
+      "value": 1055
     },
     {
       "id": "elijahmitchell",
@@ -2711,19 +2711,19 @@
       "id": "ainiassmith",
       "name": "Ainias Smith",
       "link": "https://keeptradecut.com/dynasty-rankings/players/ainias-smith-1624",
-      "value": 1016
+      "value": 1019
     },
     {
       "id": "samajeperine",
       "name": "Samaje Perine",
       "link": "https://keeptradecut.com/dynasty-rankings/players/samaje-perine-785",
-      "value": 1010
+      "value": 1013
     },
     {
       "id": "brendenrice",
       "name": "Brenden Rice",
       "link": "https://keeptradecut.com/dynasty-rankings/players/brenden-rice-1594",
-      "value": 994
+      "value": 1000
     },
     {
       "id": "jawharjordan",
@@ -2735,19 +2735,19 @@
       "id": "jeremyruckert",
       "name": "Jeremy Ruckert",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jeremy-ruckert-1255",
-      "value": 979
+      "value": 976
+    },
+    {
+      "id": "khalilherbert",
+      "name": "Khalil Herbert",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/khalil-herbert-994",
+      "value": 972
     },
     {
       "id": "grantcalcaterra",
       "name": "Grant Calcaterra",
       "link": "https://keeptradecut.com/dynasty-rankings/players/grant-calcaterra-1263",
       "value": 971
-    },
-    {
-      "id": "khalilherbert",
-      "name": "Khalil Herbert",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/khalil-herbert-994",
-      "value": 969
     },
     {
       "id": "deandrehopkins",
@@ -2771,30 +2771,24 @@
       "id": "zavierscott",
       "name": "Zavier Scott",
       "link": "https://keeptradecut.com/dynasty-rankings/players/zavier-scott-1898",
-      "value": 942
+      "value": 939
     },
     {
       "id": "johnnywilson",
       "name": "Johnny Wilson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/johnny-wilson-1596",
-      "value": 939
+      "value": 936
     },
     {
       "id": "alexandermattison",
       "name": "Alexander Mattison",
       "link": "https://keeptradecut.com/dynasty-rankings/players/alexander-mattison-326",
-      "value": 930
+      "value": 924
     },
     {
       "id": "zamirwhite",
       "name": "Zamir White",
       "link": "https://keeptradecut.com/dynasty-rankings/players/zamir-white-1230",
-      "value": 920
-    },
-    {
-      "id": "juliuschestnut",
-      "name": "Julius Chestnut",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/julius-chestnut-1325",
       "value": 917
     },
     {
@@ -2802,6 +2796,12 @@
       "name": "Kendall Milton",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kendall-milton-1577",
       "value": 916
+    },
+    {
+      "id": "juliuschestnut",
+      "name": "Julius Chestnut",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/julius-chestnut-1325",
+      "value": 914
     },
     {
       "id": "ajdillon",
@@ -2813,7 +2813,7 @@
       "id": "kennymcintosh",
       "name": "Kenny McIntosh",
       "link": "https://keeptradecut.com/dynasty-rankings/players/kenny-mcintosh-1385",
-      "value": 902
+      "value": 905
     },
     {
       "id": "tylanwallace",
@@ -2825,13 +2825,13 @@
       "id": "mecolehardman",
       "name": "Mecole Hardman",
       "link": "https://keeptradecut.com/dynasty-rankings/players/mecole-hardman-404",
-      "value": 892
+      "value": 895
     },
     {
       "id": "lajohntaywester",
       "name": "LaJohntay Wester",
       "link": "https://keeptradecut.com/dynasty-rankings/players/lajohntay-wester-1823",
-      "value": 889
+      "value": 892
     },
     {
       "id": "deriusdavis",
@@ -2849,49 +2849,49 @@
       "id": "jermaineburton",
       "name": "Jermaine Burton",
       "link": "https://keeptradecut.com/dynasty-rankings/players/jermaine-burton-1603",
-      "value": 860
+      "value": 857
     },
     {
       "id": "vanjefferson",
       "name": "Van Jefferson",
       "link": "https://keeptradecut.com/dynasty-rankings/players/van-jefferson-578",
-      "value": 849
+      "value": 846
     },
     {
       "id": "treylance",
       "name": "Trey Lance",
       "link": "https://keeptradecut.com/dynasty-rankings/players/trey-lance-1017",
-      "value": 840
+      "value": 837
     },
     {
       "id": "willdissly",
       "name": "Will Dissly",
       "link": "https://keeptradecut.com/dynasty-rankings/players/will-dissly-86",
-      "value": 831
+      "value": 828
     },
     {
       "id": "adamtrautman",
       "name": "Adam Trautman",
       "link": "https://keeptradecut.com/dynasty-rankings/players/adam-trautman-566",
-      "value": 816
+      "value": 819
+    },
+    {
+      "id": "noahbrown",
+      "name": "Noah Brown",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/noah-brown-776",
+      "value": 811
+    },
+    {
+      "id": "tylerconklin",
+      "name": "Tyler Conklin",
+      "link": "https://keeptradecut.com/dynasty-rankings/players/tyler-conklin-489",
+      "value": 810
     },
     {
       "id": "malikheath",
       "name": "Malik Heath",
       "link": "https://keeptradecut.com/dynasty-rankings/players/malik-heath-1502",
       "value": 809
-    },
-    {
-      "id": "noahbrown",
-      "name": "Noah Brown",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/noah-brown-776",
-      "value": 808
-    },
-    {
-      "id": "tylerconklin",
-      "name": "Tyler Conklin",
-      "link": "https://keeptradecut.com/dynasty-rankings/players/tyler-conklin-489",
-      "value": 807
     },
     {
       "id": "josholiver",
