@@ -12,7 +12,7 @@ require('dotenv').config();
 // Edit this to change what the AI analyzes.
 // It will always run with current league data as context.
 // ============================================
-const ANALYST_PROMPT = `You will be creating a comprehensive fantasy sports trade analysis newsletter for a team manager. The analysis should be formatted as an HTML email newsletter with proper formatting for email readers.
+const ANALYST_PROMPT = `You are a fantasy football dynasty analyst. Generate a concise HTML email newsletter for {{TEAM_NAME}}.
 
 Here is the team you are analyzing:
 <team_name>
@@ -24,56 +24,74 @@ Here is the league roster data for all teams:
 {{LEAGUE_ROSTER_DATA}}
 </league_roster_data>
 
-Here is the player values data from Keep Trade Cut playerValues.json:
+Here is the player values data from Keep Trade Cut (1QB format — use these for all trade valuations):
 <player_values>
 {{PLAYER_VALUES}}
 </player_values>
 
-Your task is to create a four-part trade analysis newsletter. Follow these steps:
+**SECTION 1: All Team Assessments**
+For EVERY team in the league (including {{TEAM_NAME}}), output a compact block using this exact format:
 
-**STEP 1: Team Self-Assessment**
-Create a short report (2-4 sentences) analyzing {{TEAM_NAME}}'s strengths and weaknesses, along with ideas for improving the team's weaknesses. Format this with an HTML bold headline followed by body text.
+<b>[Team Name]</b>
+Strengths: [comma-separated list of positional strengths, e.g. QB1, WR depth, RB1]
+Weakness: [comma-separated list of positional weaknesses, e.g. TE1, RB depth]
+Improvement: [1-2 sentences max]
+Win-Win with {{TEAM_NAME}}: [Only include if a realistic trade exists. Format as: Give [player(s)] · Get [player(s)]. Skip this line entirely if no trade applies.]
 
-**STEP 2: League-Wide Team Analysis**
-For each team in the league (excluding {{TEAM_NAME}}), create:
-- A 1-sentence strength/weakness report for that team
-- Identification of specific players on that team that {{TEAM_NAME}} should target
-- Any potential win-win trade ideas between {{TEAM_NAME}} and that team
+Do this for all teams before moving to Section 2.
 
-Format each team's analysis with an HTML bold headline for the team name, followed by the analysis in body text.
+**SECTION 2: Players to Target**
+List the top players {{TEAM_NAME}} should pursue to improve the team — regardless of whether it's a win-win for the other team or if player is Free Agent (unassigned to a team). For each player include: name, current team, and one sentence on why {{TEAM_NAME}} should want them.
 
-**STEP 3: Top 3 Trade Targets**
-Identify the top 3 trade targets {{TEAM_NAME}} should pursue to improve the team. For each target, include:
-- Player name
-- Which team currently has them
-- Why {{TEAM_NAME}} should want them
-- What {{TEAM_NAME}} might offer in return (use player values from the provided data to ensure fair trades)
+**FORMATTING:**
+- HTML email compatible
+- Bold tags for team names and section headers
+- Keep everything concise — no long paragraphs
+- Do not add an introduction or conclusion
 
-Format this section with an HTML bold headline, then present each target with clear subheadings.
+**INSIDER TRDE INFO:***
+Players attempted to get and failed, which means the manager needs you to overpay:
+- trey mcbride
+- ladd mcconkey
+- isaiah likely
 
-**STEP 4: Trade Proposal Tables**
-Format all specific trade proposals in HTML tables optimized for email readers. Each table should have:
-- Minimal column headers
-- Column 1: Player name/asset from Team A with their player value
-- Column 2: Player name/asset from Team B with their player value
-- Keep wording minimal in tables - use only essential information
+Manager insights:
+Shockers: 
+- willing to give 2027 2nd for 26 2nd and AD mitchell
+- had intrest in flowers
+- loves draft picks
 
-Use the player values from the provided playerValues.json data to ensure trades are balanced and fair.
+Moosejaw: 
+- willing to trade TE depth J. Sanders for 3.03
+- doesn't like draft picks other than firsts
 
-**OVERALL FORMATTING REQUIREMENTS:**
-- Structure the entire output as an HTML email newsletter
-- Use HTML bold tags for all section headlines and subheadlines
-- Use simple body content formatting for analysis text
-- Keep all table content minimal - deeper analysis should be in the body text, not in tables
-- Ensure all HTML is compatible with standard email readers
-- Make the newsletter easy to scan with clear visual hierarchy
+Coolers:
+- wanted 2.05 for godwin + 2.12 then renigged 
+- interested in moving up in the draft
+- interested in S. Laporta 3 way trade with bruce
 
-Begin your newsletter now, starting with a brief introduction, then proceeding through all four steps.`;
+Bruce:
+- interested in Kincaid
+- intrested in trading Hurts for FLEX
+
+Current ideas:
+3 way trade involivng kincaid, laporta win win win trade.
+
+**Keep response within 4,096 tokens..**
+
+`;
+
+
+
 
 // ============================================
 // CONFIGURATION
 // ============================================
-// KTC Dynasty Rankings configuration
+
+// KTC Superflex rankings (format=1) — used ONLY for:
+//   - Value Changes threshold report (±250+)
+//   - New Players in Rankings report
+// These values are superflex format. Do NOT use for trades, AI analysis, or team reports.
 const KTC_CONFIG = {
   name: "KTC Dynasty Rankings",
   url: 'https://keeptradecut.com/dynasty-rankings?page=0&filters=QB|WR|RB|TE|RDP&format=1',
@@ -85,7 +103,14 @@ const KTC_CONFIG = {
   }
 };
 
+// KTC 1QB rankings (format=2) — used for:
+//   - AI trade analysis (oneQbPlayerValues.json → PLAYER_VALUES in prompt)
+//   - Trade value comparisons
+//   - Team reports and Moonshiners trending up/down
+const KTC_1QB_FORMAT = 2;
+
 // Roster URL — timestamp param ensures fresh data each fetch
+// Used for each team's player roster. Player values pulled as 1QB (oneQBValues field).
 const ROSTER_URL = () =>
   `https://keeptradecut.com/dynasty/power-rankings/team-breakdown?leagueId=1319880534624591872&platform=2&team=180481036336381952&t=${Date.now()}`;
 
@@ -93,7 +118,7 @@ const ROSTER_URL = () =>
 // CONFIGURATION
 // ============================================
 // Subtract this from QB values to normalize for 1QB league
-const QB_1QB_ADJUSTMENT = -2250;
+const QB_1QB_ADJUSTMENT = 0;
 
 function adjustedValue(player) {
   return player.position === 'QB'
@@ -105,7 +130,8 @@ function adjustedValue(player) {
 // DATABASE SETUP
 // ============================================
 const DATA_DIR = path.join(__dirname, 'data');
-const DB_FILE = path.join(DATA_DIR, 'playerValues.json');
+const DB_FILE = path.join(DATA_DIR, 'playerValues.json');         // superflex — value change detection only
+const ONE_QB_DB_FILE = path.join(DATA_DIR, 'oneQbPlayerValues.json'); // 1QB — trades, AI analysis, team reports
 const ROSTERS_FILE = path.join(DATA_DIR, 'leagueRosters.json');
 
 // Ensure data directory exists
@@ -147,6 +173,27 @@ function getDatabase() {
  */
 function saveDatabase(data) {
   fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
+}
+
+// ── 1QB player values (trades, AI analysis, team reports) ─────────────────
+
+function initOneQbDatabase() {
+  if (!fs.existsSync(ONE_QB_DB_FILE)) {
+    fs.writeFileSync(ONE_QB_DB_FILE, JSON.stringify({ lastUpdated: null, players: [] }, null, 2));
+  }
+}
+
+function getOneQbDatabase() {
+  try {
+    return JSON.parse(fs.readFileSync(ONE_QB_DB_FILE, 'utf8'));
+  } catch (error) {
+    console.error('Error reading 1QB database:', error.message);
+    return { lastUpdated: null, players: [] };
+  }
+}
+
+function saveOneQbDatabase(data) {
+  fs.writeFileSync(ONE_QB_DB_FILE, JSON.stringify(data, null, 2));
 }
 
 // ============================================
@@ -222,7 +269,7 @@ function buildRoster(team, playersMap) {
   team.playerIds.forEach(pid => {
     const p = playersMap.get(pid);
     if (!p) return;
-    const value = p.superflexValues?.value ?? 0;
+    const value = p.oneQBValues?.value ?? 0;
     const link = `https://keeptradecut.com/dynasty-rankings/players/${p.slug}`;
     players.push({ id: getplayerId(p.playerName), name: p.playerName, position: p.position, value, link });
   });
@@ -301,9 +348,9 @@ async function fetchAllTeams(leagueData) {
  * Makes HTTP request to specified page number
  * Returns array of player objects found on that page
  */
-async function fetchPage(pageNum) {
+async function fetchPage(pageNum, format = 1) {
   try {
-    const url = `https://keeptradecut.com/dynasty-rankings?page=${pageNum}&filters=QB|WR|RB|TE|RDP&format=1`;
+    const url = `https://keeptradecut.com/dynasty-rankings?page=${pageNum}&filters=QB|WR|RB|TE|RDP&format=${format}`;
     
     console.log(`Fetching page ${pageNum}...`);
     const response = await axios.get(url, {
@@ -347,9 +394,10 @@ async function fetchPage(pageNum) {
  * (starting at page=0) until a page returns 0 players or all duplicates.
  * MAX_PAGES is a hard safety cap against infinite loops.
  */
-async function fetchAllPages() {
+async function fetchAllPages(format = 1) {
   try {
-    console.log(`\n📊 Fetching all pages for ${KTC_CONFIG.name}...`);
+    const label = format === KTC_1QB_FORMAT ? '1QB' : 'Superflex';
+    console.log(`\n📊 Fetching all pages for ${KTC_CONFIG.name} (${label})...`);
 
     const MAX_PAGES = 20;
     let allplayers = [];
@@ -357,7 +405,7 @@ async function fetchAllPages() {
     let pagesFetched = 0;
 
     for (let pageNum = 0; pageNum < MAX_PAGES; pageNum++) {
-      const pageData = await fetchPage(pageNum);
+      const pageData = await fetchPage(pageNum, format);
       const pageplayers = pageData.players;
       pagesFetched++;
 
@@ -406,12 +454,12 @@ async function fetchAllPages() {
 // CHANGE DETECTION FUNCTIONS
 // ============================================
 
-const VALUE_CHANGE_THRESHOLD = 500;
+const VALUE_CHANGE_THRESHOLD = 250;
 
 /**
  * Detect changes between old and new player values
  * - added: players new to the rankings
- * - valueChanges: players whose value moved by ±500 or more
+ * - valueChanges: players whose value moved by ±/-250 or more
  * Removed players are not reported but are automatically dropped
  * from playerValues.json since the DB is fully replaced each run.
  */
@@ -435,12 +483,12 @@ function detectChanges(oldplayers, newplayers) {
     }
   });
 
-  // Find value changes >= ±750
+  // Find value changes if player value goes up or down by greater than 250
   newplayers.forEach(newplayer => {
     const oldplayer = oldMap.get(newplayer.id);
     if (oldplayer) {
       const diff = newplayer.value - oldplayer.value;
-      if (Math.abs(diff) >= VALUE_CHANGE_THRESHOLD) {
+      if (Math.abs(diff) > VALUE_CHANGE_THRESHOLD) {
         changes.valueChanges.push({
           name: newplayer.name,
           oldValue: oldplayer.value,
@@ -466,7 +514,7 @@ function detectChanges(oldplayers, newplayers) {
  * Send league roster data + ANALYST_PROMPT to Claude and return the response text.
  * Returns null if ANTHROPIC_API_KEY is not set or the call fails.
  */
-async function fetchAIAnalysis(myTeam, allTeams) {
+async function fetchAIAnalysis(myTeam, allTeams, oneQbPlayers) {
   if (!process.env.ANTHROPIC_API_KEY) {
     console.warn('⚠️ ANTHROPIC_API_KEY not set, skipping AI analysis');
     return null;
@@ -483,10 +531,10 @@ async function fetchAIAnalysis(myTeam, allTeams) {
       return `${team.name}${marker} [Total: ${team.totalValue.toLocaleString()}]\n${players}`;
     }).join('\n\n');
 
-    // Build a flat player values lookup for all rostered players
-    const playerValues = allTeams.flatMap(team =>
-      team.players.map(p => `${p.name} (${p.position}): ${p.adjustedValue.toLocaleString()}`)
-    ).join('\n');
+    // Build a flat player values lookup from 1QB values (all players, not just rostered)
+    const playerValues = oneQbPlayers
+      .map(p => `${p.name}: ${p.value.toLocaleString()}`)
+      .join('\n');
 
     const prompt = ANALYST_PROMPT
       .replace(/\{\{TEAM_NAME\}\}/g, myTeam.name)
@@ -517,7 +565,7 @@ async function fetchAIAnalysis(myTeam, allTeams) {
  * Build HTML email content.
  * Always starts with the full roster section, then league-wide value changes and new players.
  */
-function buildEmailHTML(changes, rosterPlayers, previousPlayersMap, aiAnalysis) {
+function buildEmailHTML(changes, rosterPlayers, previousOneQbPlayersMap, aiAnalysis) {
   let html = `
     <h2 style="color: #0066cc;">📊 ${KTC_CONFIG.name}</h2>
     <p style="font-size: 14px; color: #666;">Update checked at ${new Date().toLocaleString()}</p>
@@ -541,7 +589,7 @@ function buildEmailHTML(changes, rosterPlayers, previousPlayersMap, aiAnalysis) 
 
       players.forEach(player => {
         const displayValue = adjustedValue(player);
-        const prev = previousPlayersMap.get(player.id);
+        const prev = previousOneQbPlayersMap.get(player.id);
         let changeHtml = '';
 
         if (!prev) {
@@ -552,7 +600,7 @@ function buildEmailHTML(changes, rosterPlayers, previousPlayersMap, aiAnalysis) 
             changeHtml = `<span style="color:#888; font-size:12px;"> — unchanged</span>`;
           } else {
             const isUp = diff > 0;
-            const color = isUp ? '#27ae60' : '#e74c3c';
+            const color = isUp ? '#00ff00' : '#e74c3c';
             const arrow = isUp ? '▲' : '▼';
             changeHtml = `<span style="color:${color}; font-size:12px; font-weight:bold;"> ${arrow} ${Math.abs(diff).toLocaleString()}</span>`;
           }
@@ -572,11 +620,11 @@ function buildEmailHTML(changes, rosterPlayers, previousPlayersMap, aiAnalysis) 
 
   // ── LEAGUE-WIDE VALUE CHANGES ─────────────────────────────────────
   if (changes.valueChanges.length > 0) {
-    html += `<h3 style="color: #f39c12; margin-top: 28px;">💰 Value Changes ±${VALUE_CHANGE_THRESHOLD.toLocaleString()}+ (${changes.valueChanges.length})</h3>`;
+    html += `<h3 style="color: #f39c12; margin-top: 28px;">💰 Value Changes ±/- ${VALUE_CHANGE_THRESHOLD.toLocaleString()} (${changes.valueChanges.length})</h3>`;
     changes.valueChanges.forEach(change => {
       const isUp = change.diff > 0;
       const arrow = isUp ? '▲' : '▼';
-      const color = isUp ? '#27ae60' : '#e74c3c';
+      const color = isUp ? '#00ff00' : '#e74c3c';
       html += `
         <div style="margin: 6px 0; padding: 10px 12px; border-left: 4px solid ${color}; border-radius: 0px 8px 8px 8px; background:#efefef;">
           <span style="font-weight:bold;">
@@ -593,10 +641,10 @@ function buildEmailHTML(changes, rosterPlayers, previousPlayersMap, aiAnalysis) 
 
   // ── NEW PLAYERS IN RANKINGS ───────────────────────────────────────
   if (changes.added.length > 0) {
-    html += `<h3 style="color: #27ae60; margin-top: 28px;">✨ New Players in Rankings (${changes.added.length})</h3>`;
+    html += `<h3 style="color: #00ff00; margin-top: 28px;">✨ New Players in Rankings (${changes.added.length})</h3>`;
     changes.added.forEach(player => {
       html += `
-        <div style="margin: 6px 0; padding: 10px 12px; border-left: 4px solid #27ae60; border-radius: 0px 8px 8px 8px; background:#efefef;">
+        <div style="margin: 6px 0; padding: 10px 12px; border-left: 4px solid #00ff00; border-radius: 0px 8px 8px 8px; background:#efefef;">
           <span style="font-weight:bold;">
             <a href="${player.link || '#'}" style="color:#0066cc; text-decoration:none;">${player.name}</a>
           </span>
@@ -668,14 +716,20 @@ async function monitor() {
   console.log('📊 Starting KTC Dynasty Rankings monitoring...');
   console.log('============================================================');
 
-  // Step 1: Initialize and load database
+  // Step 1: Initialize and load databases
   initDatabase();
+  initOneQbDatabase();
   const db = getDatabase();
   const previousplayers = db.players || [];
-  console.log(`📚 Loaded ${previousplayers.length} players from previous run`);
-  const previousPlayersMap = new Map(previousplayers.map(p => [p.id, p]));
+  console.log(`📚 Loaded ${previousplayers.length} superflex players from previous run`);
 
-  // Step 2: Fetch league page data once, then rankings in parallel
+  // Load previous 1QB values for roster trending (▲/▼) in the email
+  const oneQbDb = getOneQbDatabase();
+  const previousOneQbPlayers = oneQbDb.players || [];
+  const previousOneQbPlayersMap = new Map(previousOneQbPlayers.map(p => [p.id, p]));
+  console.log(`📚 Loaded ${previousOneQbPlayers.length} 1QB players from previous run`);
+
+  // Step 2: Fetch league page data once, then rankings (both formats) in parallel
   let leagueData;
   try {
     leagueData = await fetchLeaguePageData();
@@ -684,8 +738,9 @@ async function monitor() {
     leagueData = { leagueTeams: [], playersMap: new Map() };
   }
 
-  const [rankingsResult, rosterPlayers] = await Promise.all([
-    fetchAllPages(),
+  const [rankingsResult, oneQbRankingsResult, rosterPlayers] = await Promise.all([
+    fetchAllPages(1),                  // superflex — value change threshold detection only
+    fetchAllPages(KTC_1QB_FORMAT),     // 1QB — trades, AI analysis, team reports
     fetchMyRoster(leagueData)
   ]);
 
@@ -707,13 +762,14 @@ async function monitor() {
   }
 
   const currentplayers = rankingsResult.players;
+  const currentOneQbPlayers = oneQbRankingsResult.players;
 
   if (currentplayers.length === 0) {
     console.error('❌ No players fetched, aborting to avoid data loss');
     return;
   }
 
-  // Step 3: Detect league-wide changes
+  // Step 3: Detect league-wide changes (superflex values only)
   console.log('\n🔍 Detecting changes...');
   const changes = detectChanges(previousplayers, currentplayers);
 
@@ -724,15 +780,20 @@ async function monitor() {
   // Step 4: Run AI analysis + send email
   const allTeams = await fetchAllTeams(leagueData);
   const myTeam = allTeams.find(t => t.name === TeamName) ?? allTeams[0];
-  const aiAnalysis = await fetchAIAnalysis(myTeam, allTeams);
-  const htmlContent = buildEmailHTML(changes, rosterPlayers, previousPlayersMap, aiAnalysis);
+  const aiAnalysis = await fetchAIAnalysis(myTeam, allTeams, currentOneQbPlayers);
+  const htmlContent = buildEmailHTML(changes, rosterPlayers, previousOneQbPlayersMap, aiAnalysis);
   await sendEmail(htmlContent);
 
-  // Step 5: Save updated playerValues
-  console.log(`💾 Saving ${currentplayers.length} players to database...`);
+  // Step 5: Save updated player values (both formats)
+  console.log(`💾 Saving ${currentplayers.length} superflex players to playerValues.json...`);
   db.players = currentplayers;
   db.lastUpdated = new Date().toISOString();
   saveDatabase(db);
+
+  if (currentOneQbPlayers.length > 0) {
+    console.log(`💾 Saving ${currentOneQbPlayers.length} 1QB players to oneQbPlayerValues.json...`);
+    saveOneQbDatabase({ players: currentOneQbPlayers, lastUpdated: new Date().toISOString() });
+  }
 
   console.log('============================================================');
   console.log('✅ Monitor run completed successfully');
