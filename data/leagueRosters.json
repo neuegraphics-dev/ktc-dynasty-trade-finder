@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-03-20T16:01:42.685Z",
+  "lastUpdated": "2026-03-20T16:12:58.407Z",
   "teams": [
     {
       "teamId": "650381648197681152",
       "name": "Casa",
-      "totalValue": 100303,
+      "totalValue": 100300,
       "players": [
         {
           "id": "jahmyrgibbs",
@@ -90,17 +90,17 @@
           "id": "brentonstrange",
           "name": "Brenton Strange",
           "position": "TE",
-          "value": 3776,
+          "value": 3773,
           "link": "https://keeptradecut.com/dynasty-rankings/players/brenton-strange-1461",
-          "adjustedValue": 3776
+          "adjustedValue": 3773
         },
         {
           "id": "jauanjennings",
           "name": "Jauan Jennings",
           "position": "WR",
-          "value": 3510,
+          "value": 3507,
           "link": "https://keeptradecut.com/dynasty-rankings/players/jauan-jennings-576",
-          "adjustedValue": 3510
+          "adjustedValue": 3507
         },
         {
           "id": "matthewstafford",
@@ -146,9 +146,9 @@
           "id": "juwanjohnson",
           "name": "Juwan Johnson",
           "position": "TE",
-          "value": 2881,
+          "value": 2884,
           "link": "https://keeptradecut.com/dynasty-rankings/players/juwan-johnson-575",
-          "adjustedValue": 2881
+          "adjustedValue": 2884
         },
         {
           "id": "jaydonblue",
@@ -281,9 +281,9 @@
           "id": "khalilshakir",
           "name": "Khalil Shakir",
           "position": "WR",
-          "value": 3858,
+          "value": 3852,
           "link": "https://keeptradecut.com/dynasty-rankings/players/khalil-shakir-1278",
-          "adjustedValue": 3858
+          "adjustedValue": 3852
         },
         {
           "id": "masontaylor",
@@ -313,9 +313,9 @@
           "id": "brianrobinson",
           "name": "Brian Robinson",
           "position": "RB",
-          "value": 2792,
+          "value": 2798,
           "link": "https://keeptradecut.com/dynasty-rankings/players/brian-robinson-1232",
-          "adjustedValue": 2792
+          "adjustedValue": 2798
         },
         {
           "id": "emanuelwilson",
@@ -378,7 +378,7 @@
     {
       "teamId": "180481036336381952",
       "name": "Montreal Moonshiners",
-      "totalValue": 97277,
+      "totalValue": 97283,
       "players": [
         {
           "id": "omarionhampton",
@@ -448,9 +448,9 @@
           "id": "orondegadsden",
           "name": "Oronde Gadsden",
           "position": "TE",
-          "value": 4752,
+          "value": 4755,
           "link": "https://keeptradecut.com/dynasty-rankings/players/oronde-gadsden-1799",
-          "adjustedValue": 4752
+          "adjustedValue": 4755
         },
         {
           "id": "joshdowns",
@@ -464,9 +464,9 @@
           "id": "blakecorum",
           "name": "Blake Corum",
           "position": "RB",
-          "value": 4106,
+          "value": 4109,
           "link": "https://keeptradecut.com/dynasty-rankings/players/blake-corum-1564",
-          "adjustedValue": 4106
+          "adjustedValue": 4109
         },
         {
           "id": "daltonkincaid",
@@ -536,9 +536,9 @@
           "id": "raydavis",
           "name": "Ray Davis",
           "position": "RB",
-          "value": 2435,
+          "value": 2432,
           "link": "https://keeptradecut.com/dynasty-rankings/players/ray-davis-1574",
-          "adjustedValue": 2435
+          "adjustedValue": 2432
         },
         {
           "id": "anthonyrichardson",
@@ -552,9 +552,9 @@
           "id": "jarquezhunter",
           "name": "Jarquez Hunter",
           "position": "RB",
-          "value": 2134,
+          "value": 2137,
           "link": "https://keeptradecut.com/dynasty-rankings/players/jarquez-hunter-1764",
-          "adjustedValue": 2134
+          "adjustedValue": 2137
         },
         {
           "id": "xavierrestrepo",
@@ -583,17 +583,17 @@
           "id": "treymcbride",
           "name": "Trey McBride",
           "position": "TE",
-          "value": 7932,
+          "value": 7929,
           "link": "https://keeptradecut.com/dynasty-rankings/players/trey-mcbride-1253",
-          "adjustedValue": 7932
+          "adjustedValue": 7929
         },
         {
           "id": "ceedeelamb",
           "name": "CeeDee Lamb",
           "position": "WR",
-          "value": 7876,
+          "value": 7873,
           "link": "https://keeptradecut.com/dynasty-rankings/players/ceedee-lamb-546",
-          "adjustedValue": 7876
+          "adjustedValue": 7873
         },
         {
           "id": "tetairoamcmillan",
@@ -639,9 +639,9 @@
           "id": "derrickhenry",
           "name": "Derrick Henry",
           "position": "RB",
-          "value": 4777,
+          "value": 4780,
           "link": "https://keeptradecut.com/dynasty-rankings/players/derrick-henry-296",
-          "adjustedValue": 4777
+          "adjustedValue": 4780
         },
         {
           "id": "wandalerobinson",
@@ -679,9 +679,9 @@
           "id": "jkdobbins",
           "name": "J.K. Dobbins",
           "position": "RB",
-          "value": 3682,
+          "value": 3685,
           "link": "https://keeptradecut.com/dynasty-rankings/players/jk-dobbins-636",
-          "adjustedValue": 3682
+          "adjustedValue": 3685
         },
         {
           "id": "jonathonbrooks",
@@ -768,7 +768,7 @@
     {
       "teamId": "180514475760566272",
       "name": "Thunder Bay Storm",
-      "totalValue": 93197,
+      "totalValue": 93200,
       "players": [
         {
           "id": "jamarrchase",
@@ -782,9 +782,9 @@
           "id": "justinjefferson",
           "name": "Justin Jefferson",
           "position": "WR",
-          "value": 7873,
+          "value": 7876,
           "link": "https://keeptradecut.com/dynasty-rankings/players/justin-jefferson-542",
-          "adjustedValue": 7873
+          "adjustedValue": 7876
         },
         {
           "id": "devonachane",
@@ -822,9 +822,9 @@
           "id": "saquonbarkley",
           "name": "Saquon Barkley",
           "position": "RB",
-          "value": 5589,
+          "value": 5586,
           "link": "https://keeptradecut.com/dynasty-rankings/players/saquon-barkley-1",
-          "adjustedValue": 5589
+          "adjustedValue": 5586
         },
         {
           "id": "davanteadams",
@@ -838,9 +838,9 @@
           "id": "samdarnold",
           "name": "Sam Darnold",
           "position": "QB",
-          "value": 3911,
+          "value": 3914,
           "link": "https://keeptradecut.com/dynasty-rankings/players/sam-darnold-331",
-          "adjustedValue": 3911
+          "adjustedValue": 3914
         },
         {
           "id": "patbryant",
@@ -918,17 +918,17 @@
           "id": "jaylinlane",
           "name": "Jaylin Lane",
           "position": "WR",
-          "value": 2390,
+          "value": 2393,
           "link": "https://keeptradecut.com/dynasty-rankings/players/jaylin-lane-1816",
-          "adjustedValue": 2390
+          "adjustedValue": 2393
         },
         {
           "id": "isaacguerendo",
           "name": "Isaac Guerendo",
           "position": "RB",
-          "value": 1954,
+          "value": 1951,
           "link": "https://keeptradecut.com/dynasty-rankings/players/isaac-guerendo-1626",
-          "adjustedValue": 1954
+          "adjustedValue": 1951
         },
         {
           "id": "tyrellshavers",
@@ -951,7 +951,7 @@
     {
       "teamId": "545296812566200320",
       "name": "Top Cheddar",
-      "totalValue": 91768,
+      "totalValue": 91776,
       "players": [
         {
           "id": "bijanrobinson",
@@ -981,9 +981,9 @@
           "id": "tuckerkraft",
           "name": "Tucker Kraft",
           "position": "TE",
-          "value": 5532,
+          "value": 5536,
           "link": "https://keeptradecut.com/dynasty-rankings/players/tucker-kraft-1418",
-          "adjustedValue": 5532
+          "adjustedValue": 5536
         },
         {
           "id": "camskattebo",
@@ -1005,9 +1005,9 @@
           "id": "michaelwilson",
           "name": "Michael Wilson",
           "position": "WR",
-          "value": 4618,
+          "value": 4619,
           "link": "https://keeptradecut.com/dynasty-rankings/players/michael-wilson-1421",
-          "adjustedValue": 4618
+          "adjustedValue": 4619
         },
         {
           "id": "jordanlove",
@@ -1109,9 +1109,9 @@
           "id": "dariusslayton",
           "name": "Darius Slayton",
           "position": "WR",
-          "value": 1969,
+          "value": 1972,
           "link": "https://keeptradecut.com/dynasty-rankings/players/darius-slayton-77",
-          "adjustedValue": 1969
+          "adjustedValue": 1972
         },
         {
           "id": "jeromeford",
@@ -1142,7 +1142,7 @@
     {
       "teamId": "609197386803253248",
       "name": "Loser",
-      "totalValue": 83657,
+      "totalValue": 83653,
       "players": [
         {
           "id": "maliknabers",
@@ -1196,9 +1196,9 @@
           "id": "djmoore",
           "name": "D.J. Moore",
           "position": "WR",
-          "value": 4883,
+          "value": 4880,
           "link": "https://keeptradecut.com/dynasty-rankings/players/dj-moore-304",
-          "adjustedValue": 4883
+          "adjustedValue": 4880
         },
         {
           "id": "parkerwashington",
@@ -1228,9 +1228,9 @@
           "id": "courtlandsutton",
           "name": "Courtland Sutton",
           "position": "WR",
-          "value": 3986,
+          "value": 3988,
           "link": "https://keeptradecut.com/dynasty-rankings/players/courtland-sutton-226",
-          "adjustedValue": 3986
+          "adjustedValue": 3988
         },
         {
           "id": "kennethgainwell",
@@ -1244,9 +1244,9 @@
           "id": "gunnarhelm",
           "name": "Gunnar Helm",
           "position": "TE",
-          "value": 3031,
+          "value": 3028,
           "link": "https://keeptradecut.com/dynasty-rankings/players/gunnar-helm-1805",
-          "adjustedValue": 3031
+          "adjustedValue": 3028
         },
         {
           "id": "tezjohnson",
@@ -1317,7 +1317,7 @@
     {
       "teamId": "649085021109538816",
       "name": "Chilling with Mahomes",
-      "totalValue": 82664,
+      "totalValue": 82659,
       "players": [
         {
           "id": "brockbowers",
@@ -1371,17 +1371,17 @@
           "id": "michaelpittman",
           "name": "Michael Pittman",
           "position": "WR",
-          "value": 4356,
+          "value": 4354,
           "link": "https://keeptradecut.com/dynasty-rankings/players/michael-pittman-536",
-          "adjustedValue": 4356
+          "adjustedValue": 4354
         },
         {
           "id": "ricodowdle",
           "name": "Rico Dowdle",
           "position": "RB",
-          "value": 4060,
+          "value": 4057,
           "link": "https://keeptradecut.com/dynasty-rankings/players/rico-dowdle-555",
-          "adjustedValue": 4060
+          "adjustedValue": 4057
         },
         {
           "id": "jacorycroskey-merritt",
@@ -1435,17 +1435,17 @@
           "id": "stefondiggs",
           "name": "Stefon Diggs",
           "position": "WR",
-          "value": 2902,
+          "value": 2905,
           "link": "https://keeptradecut.com/dynasty-rankings/players/stefon-diggs-262",
-          "adjustedValue": 2902
+          "adjustedValue": 2905
         },
         {
           "id": "traviskelce",
           "name": "Travis Kelce",
           "position": "TE",
-          "value": 2899,
+          "value": 2896,
           "link": "https://keeptradecut.com/dynasty-rankings/players/travis-kelce-264",
-          "adjustedValue": 2899
+          "adjustedValue": 2896
         },
         {
           "id": "chrisrodriguez",
@@ -1516,7 +1516,7 @@
     {
       "teamId": "471044025701363712",
       "name": "Joe Buck Yourself1",
-      "totalValue": 79192,
+      "totalValue": 79197,
       "players": [
         {
           "id": "amon-rastbrown",
@@ -1562,9 +1562,9 @@
           "id": "matthewgolden",
           "name": "Matthew Golden",
           "position": "WR",
-          "value": 4392,
+          "value": 4397,
           "link": "https://keeptradecut.com/dynasty-rankings/players/matthew-golden-1775",
-          "adjustedValue": 4392
+          "adjustedValue": 4397
         },
         {
           "id": "bakermayfield",
@@ -1618,9 +1618,9 @@
           "id": "jerryjeudy",
           "name": "Jerry Jeudy",
           "position": "WR",
-          "value": 3291,
+          "value": 3294,
           "link": "https://keeptradecut.com/dynasty-rankings/players/jerry-jeudy-545",
-          "adjustedValue": 3291
+          "adjustedValue": 3294
         },
         {
           "id": "chigoziemokonkwo",
@@ -1666,9 +1666,9 @@
           "id": "romanwilson",
           "name": "Roman Wilson",
           "position": "WR",
-          "value": 2060,
+          "value": 2057,
           "link": "https://keeptradecut.com/dynasty-rankings/players/roman-wilson-1600",
-          "adjustedValue": 2060
+          "adjustedValue": 2057
         },
         {
           "id": "gabrieldavis",
@@ -1683,15 +1683,15 @@
     {
       "teamId": "1120100059594465280",
       "name": "Mighty Melonheads",
-      "totalValue": 76761,
+      "totalValue": 76767,
       "players": [
         {
           "id": "lutherburden",
           "name": "Luther Burden",
           "position": "WR",
-          "value": 6162,
+          "value": 6159,
           "link": "https://keeptradecut.com/dynasty-rankings/players/luther-burden-1770",
-          "adjustedValue": 6162
+          "adjustedValue": 6159
         },
         {
           "id": "chasebrown",
@@ -1705,9 +1705,9 @@
           "id": "jaylenwaddle",
           "name": "Jaylen Waddle",
           "position": "WR",
-          "value": 5661,
+          "value": 5667,
           "link": "https://keeptradecut.com/dynasty-rankings/players/jaylen-waddle-1007",
-          "adjustedValue": 5661
+          "adjustedValue": 5667
         },
         {
           "id": "bhayshultuten",
@@ -1737,9 +1737,9 @@
           "id": "dandreswift",
           "name": "D'Andre Swift",
           "position": "RB",
-          "value": 4426,
+          "value": 4423,
           "link": "https://keeptradecut.com/dynasty-rankings/players/d-andre-swift-639",
-          "adjustedValue": 4426
+          "adjustedValue": 4423
         },
         {
           "id": "terrymclaurin",
@@ -1769,9 +1769,9 @@
           "id": "georgekittle",
           "name": "George Kittle",
           "position": "TE",
-          "value": 3964,
+          "value": 3970,
           "link": "https://keeptradecut.com/dynasty-rankings/players/george-kittle-298",
-          "adjustedValue": 3964
+          "adjustedValue": 3970
         },
         {
           "id": "jalencoker",
@@ -1817,17 +1817,17 @@
           "id": "calvinridley",
           "name": "Calvin Ridley",
           "position": "WR",
-          "value": 2101,
+          "value": 2104,
           "link": "https://keeptradecut.com/dynasty-rankings/players/calvin-ridley-293",
-          "adjustedValue": 2101
+          "adjustedValue": 2104
         },
         {
           "id": "mikegesicki",
           "name": "Mike Gesicki",
           "position": "TE",
-          "value": 1693,
+          "value": 1690,
           "link": "https://keeptradecut.com/dynasty-rankings/players/mike-gesicki-330",
-          "adjustedValue": 1693
+          "adjustedValue": 1690
         },
         {
           "id": "tyjohnson",
@@ -1850,7 +1850,7 @@
     {
       "teamId": "649045898030231552",
       "name": "Charlottetown Coolers ",
-      "totalValue": 72546,
+      "totalValue": 72540,
       "players": [
         {
           "id": "drakemaye",
@@ -1880,9 +1880,9 @@
           "id": "devontasmith",
           "name": "DeVonta Smith",
           "position": "WR",
-          "value": 5569,
+          "value": 5566,
           "link": "https://keeptradecut.com/dynasty-rankings/players/devonta-smith-1005",
-          "adjustedValue": 5569
+          "adjustedValue": 5566
         },
         {
           "id": "jamesonwilliams",
@@ -1896,9 +1896,9 @@
           "id": "zachcharbonnet",
           "name": "Zach Charbonnet",
           "position": "RB",
-          "value": 4753,
+          "value": 4750,
           "link": "https://keeptradecut.com/dynasty-rankings/players/zach-charbonnet-1384",
-          "adjustedValue": 4753
+          "adjustedValue": 4750
         },
         {
           "id": "davidmontgomery",
@@ -2001,7 +2001,7 @@
     {
       "teamId": "198285126591844352",
       "name": "Saskatchewan Shockers",
-      "totalValue": 62258,
+      "totalValue": 62255,
       "players": [
         {
           "id": "laddmcconkey",
@@ -2031,9 +2031,9 @@
           "id": "treybenson",
           "name": "Trey Benson",
           "position": "RB",
-          "value": 3628,
+          "value": 3625,
           "link": "https://keeptradecut.com/dynasty-rankings/players/trey-benson-1565",
-          "adjustedValue": 3628
+          "adjustedValue": 3625
         },
         {
           "id": "elicayomanor",
@@ -2103,17 +2103,17 @@
           "id": "christiankirk",
           "name": "Christian Kirk",
           "position": "WR",
-          "value": 2440,
+          "value": 2437,
           "link": "https://keeptradecut.com/dynasty-rankings/players/christian-kirk-221",
-          "adjustedValue": 2440
+          "adjustedValue": 2437
         },
         {
           "id": "marquisebrown",
           "name": "Marquise Brown",
           "position": "WR",
-          "value": 2388,
+          "value": 2391,
           "link": "https://keeptradecut.com/dynasty-rankings/players/marquise-brown-311",
-          "adjustedValue": 2388
+          "adjustedValue": 2391
         },
         {
           "id": "tuatagovailoa",
