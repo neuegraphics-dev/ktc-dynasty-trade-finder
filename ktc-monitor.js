@@ -43,14 +43,11 @@ Do this for all teams before moving to Section 2.
 **SECTION 2: Players to Target**
 List the top players {{TEAM_NAME}} should pursue to improve the team — regardless of whether it's a win-win for the other team or if player is Free Agent (unassigned to a team). For each player include: name, current team, and one sentence on why {{TEAM_NAME}} should want them.
 
-**FORMATTING:**
-- HTML email compatible
-- Bold tags for team names and section headers
-- Keep everything concise — no long paragraphs
-- Do not add an introduction or conclusion
+**SECTION 3: Win Win trades**
+Create a table for each win win trades. Utilize insider info, manager insights, but do not limit to this helpful info. Return 3 of the best trades to consider this week.
 
 **INSIDER TRDE INFO:***
-Players attempted to get and failed, which means the manager needs you to overpay:
+Players attempted to get and failed to obtain and may have inflated value:
 - trey mcbride
 - ladd mcconkey
 - isaiah likely
@@ -78,7 +75,13 @@ Current ideas:
 3 way trade involivng kincaid, laporta win win win trade.
 
 **Keep response within 4,096 tokens..**
-
+**FORMATTING:**
+- HTML email compatible
+- Bold tags for team names and section headers
+- Keep everything concise — no long paragraphs
+- Do not add an introduction or conclusion
+- Strengths/weaknesses: QB, RB, WR, TE, or "position" depth (no names)
+- Trade ideas two column table th team name, tr player with value
 `;
 
 
