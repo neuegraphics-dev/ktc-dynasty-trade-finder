@@ -44,7 +44,7 @@ Do this for all teams before moving to Section 2.
 List the top players {{TEAM_NAME}} should pursue to improve the team — regardless of whether it's a win-win for the other team or if player is Free Agent (unassigned to a team). For each player include: name, current team, and one sentence on why {{TEAM_NAME}} should want them.
 
 **SECTION 3: Win Win trades**
-Create a table for each win win trades. Utilize insider info, manager insights, but do not limit to this helpful info. Return 3 of the best trades to consider this week.
+1. Create a table for each win win trades. 2. Utilize insider info, manager insights, but do not limit to this helpful info. Return 3 of the best trades to consider this week. DO NOT LIMIT TO INSIGHTS ONLY.
 
 **INSIDER TRDE INFO:***
 Players attempted to get and failed to obtain and may have inflated value:
@@ -57,22 +57,25 @@ Shockers:
 - willing to give 2027 2nd for 26 2nd and AD mitchell
 - had intrest in flowers
 - loves draft picks
+- not likely to trade mckonkey=
 
 Moosejaw: 
 - willing to trade TE depth J. Sanders for 3.03
 - doesn't like draft picks other than firsts
+- not likely to trade mcbride or tet. mcmillan
 
 Coolers:
 - wanted 2.05 for godwin + 2.12 then renigged 
 - interested in moving up in the draft
 - interested in S. Laporta 3 way trade with bruce
+- not likely to trade maye
 
 Bruce:
 - interested in Kincaid
 - intrested in trading Hurts for FLEX
 
 Current ideas:
-3 way trade involivng kincaid, laporta win win win trade.
+3 way trade involivng kincaid to bruce, laporta coolers, win win win trade for moonshiners.
 
 **Keep response within 4,096 tokens..**
 **FORMATTING:**
