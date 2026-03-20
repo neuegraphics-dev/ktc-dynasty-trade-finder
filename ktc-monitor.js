@@ -85,12 +85,15 @@ Current ideas:
 - Do not add an introduction or conclusion
 - Strengths/weaknesses: 
 <h5>Team name</h5>
-<strong>Stregths:</strong>QB, RB, WR, TE, or "position" depth (no names)
-<strong>Weaknesses:</strong>QB, RB, WR, TE, or "position" depth (no names)
-<strong>Improvement:</strong> 1 sentence
-<strong>Win Win Trade:</strong> 1 line simplified
+<strong>Stregths:</strong>QB, RB, WR, TE, or "position" depth (no names)<br/>
+<strong>Weaknesses:</strong>QB, RB, WR, TE, or "position" depth (no names)<br/>
+<strong>Improvement:</strong> 1 sentence<br/>
+<strong>Win Win Trade:</strong> 1 line simplified<br/>
 <hr/>
-- Trade ideas two column table th team name, tr player with value. with explaination <hr/>
+- Trade ideas: two column table th team name, tr player with value. with explaination <hr/>
+- Trades should not be based on info ai/claude think they know, but rather based on onQbPlayerValues.json file, and team needs for both managers.
+- 2:1 trades should make the team giving 1 asset increased player value, as that player is the largest peice of the trade.
+- Do not limit to the trade insider info only.
 `;
 
 
