@@ -80,8 +80,14 @@ Current ideas:
 - Bold tags for team names and section headers
 - Keep everything concise — no long paragraphs
 - Do not add an introduction or conclusion
-- Strengths/weaknesses: QB, RB, WR, TE, or "position" depth (no names)
-- Trade ideas two column table th team name, tr player with value
+- Strengths/weaknesses: 
+<h5>Team name</h5>
+<strong>Stregths:</strong>QB, RB, WR, TE, or "position" depth (no names)
+<strong>Weaknesses:</strong>QB, RB, WR, TE, or "position" depth (no names)
+<strong>Improvement:</strong> 1 sentence
+<strong>Win Win Trade:</strong> 1 line simplified
+<hr/>
+- Trade ideas two column table th team name, tr player with value. with explaination <hr/>
 `;
 
 
