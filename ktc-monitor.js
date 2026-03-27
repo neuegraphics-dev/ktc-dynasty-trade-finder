@@ -47,25 +47,23 @@ List the top players {{TEAM_NAME}} should pursue to improve the team — regardl
 1. Create a table for each win win trades. 2. Utilize insider info, manager insights, but do not limit to this helpful info. Return 3 of the best trades to consider this week. DO NOT LIMIT TO INSIGHTS ONLY.
 
 **INSIDER TRDE INFO:***
-Players attempted to get and failed to obtain and may have inflated value:
-- trey mcbride
-- ladd mcconkey
-- isaiah likely
+Trade Block:
+Justin Herbert, Tyler Allgeier, Dalton Schultz, Chubba Hubbard, Cortland Sutton, Gunnar Helm, Cade Otton, 2.05, Aaron Jones, Joe Mixon, Caleb Williams, Devonta Smith, Breece Hall.
 
 Manager insights:
 Shockers: 
 - willing to give 2027 2nd for 26 2nd and AD mitchell
 - had intrest in flowers
 - loves draft picks
-- not likely to trade mckonkey=
+- not likely to trade mckonkey
 
 Moosejaw: 
 - willing to trade TE depth J. Sanders for 3.03
 - doesn't like draft picks other than firsts
-- not likely to trade mcbride or tet. mcmillan
+- only makes trades that are clear win for his team
 
 Coolers:
-- wanted 2.05 for godwin + 2.12 then renigged 
+- wanted 2.05 for godwin
 - interested in moving up in the draft
 - interested in S. Laporta 3 way trade with bruce
 - not likely to trade maye
@@ -74,8 +72,8 @@ Bruce:
 - interested in Kincaid
 - intrested in trading Hurts for FLEX
 
-Current ideas:
-3 way trade involivng kincaid to bruce, laporta coolers, win win win trade for moonshiners.
+Top Cheddar:
+- intrested in tracy, trading vidal, and gaining a 26 2nd
 
 **Keep response within 4,096 tokens..**
 **FORMATTING:**
