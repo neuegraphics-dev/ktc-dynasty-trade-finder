@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seager Marine - Competitor Monitor</title>
+    <title>KTC Dynasty Trade Finder</title>
     <style>
         * {
             margin: 0;
@@ -81,12 +81,12 @@
             font-weight: bold;
         }
 
-        .competitors-grid {
+        .teams-grid {
             display: grid;
             gap: 1.5rem;
         }
 
-        .competitor-card {
+        .team-card {
             background: #1f2937;
             border-radius: 0.5rem;
             overflow: hidden;
@@ -94,12 +94,12 @@
             transition: all 0.3s;
         }
 
-        .competitor-card:hover {
+        .team-card:hover {
             border-color: #4b5563;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .competitor-header {
+        .team-header {
             padding: 1.5rem;
             display: flex;
             justify-content: space-between;
@@ -108,22 +108,22 @@
             user-select: none;
         }
 
-        .competitor-header:hover {
+        .team-header:hover {
             background: #111827;
         }
 
-        .competitor-name {
+        .team-name {
             font-size: 1.25rem;
             font-weight: bold;
         }
 
-        .competitor-info {
+        .team-info {
             font-size: 0.875rem;
             color: #9ca3af;
             margin-top: 0.25rem;
         }
 
-        .competitor-stats {
+        .team-stats {
             display: flex;
             gap: 1rem;
             margin-top: 0.75rem;
@@ -196,7 +196,7 @@
             border-radius: 0.25rem;
         }
 
-        .change-boat-title {
+        .change-player-title {
             font-weight: 500;
             margin-bottom: 0.25rem;
         }
@@ -206,17 +206,17 @@
             color: #9ca3af;
         }
 
-        .boats-table {
+        .players-table {
             width: 100%;
             border-collapse: collapse;
             font-size: 0.875rem;
         }
 
-        .boats-table thead {
+        .players-table thead {
             background: #0f172a;
         }
 
-        .boats-table th {
+        .players-table th {
             padding: 0.75rem;
             text-align: left;
             color: #d1d5db;
@@ -224,12 +224,12 @@
             border-bottom: 1px solid #374151;
         }
 
-        .boats-table td {
+        .players-table td {
             padding: 0.75rem;
             border-bottom: 1px solid #374151;
         }
 
-        .boats-table tbody tr:hover {
+        .players-table tbody tr:hover {
             background: rgba(255, 255, 255, 0.05);
         }
 
@@ -318,7 +318,7 @@
             transition: transform 0.3s;
         }
 
-        .competitor-card.expanded .expand-icon {
+        .team-card.expanded .expand-icon {
             transform: rotate(180deg);
         }
 
@@ -331,7 +331,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .competitor-header {
+            .team-header {
                 flex-wrap: wrap;
             }
 
@@ -344,7 +344,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>⚓ Seager Marine Competitor Monitor</h1>
+            <h1>🏈 KTC Dynasty Trade Finder</h1>
             <p class="timestamp" id="timestamp">Loading...</p>
         </header>
 
@@ -357,16 +357,17 @@
 
         <div id="loading" class="loading">
             <div class="spinner"></div>
-            <p>Loading competitor data...</p>
+            <p>Loading team data...</p>
         </div>
 
         <div id="content" class="hide">
             <div class="summary-grid" id="summaryGrid"></div>
-            <div class="competitors-grid" id="competitorsGrid"></div>
+            <div class="teams-grid" id="teamsGrid"></div>
         </div>
     </div>
 
     <script>
+        // Fetch the latest roster/value data from the API
         async function fetchData() {
             try {
                 const response = await fetch('/api/inventory');
@@ -378,6 +379,7 @@
             }
         }
 
+        // Show an error banner at the top of the page
         function showError(message) {
             const errorEl = document.getElementById('error');
             errorEl.textContent = message;
@@ -392,6 +394,7 @@
             return new Date(dateString).toLocaleString();
         }
 
+        // Aggregate change counts across all teams and render the summary cards
         function renderSummary(data) {
             const summary = {
                 total: 0,
@@ -402,7 +405,8 @@
                 priceChanges: 0
             };
 
-            Object.values(data.competitors || {}).forEach(comp => {
+            // Sum each change type across every team in the response
+            Object.values(data.teams || {}).forEach(comp => {
                 if (comp.changes) {
                     summary.added += comp.changes.added?.length || 0;
                     summary.removed += comp.changes.removed?.length || 0;
@@ -412,11 +416,11 @@
                 }
             });
 
-            summary.total = Object.keys(data.competitors || {}).length;
+            summary.total = Object.keys(data.teams || {}).length;
 
             const html = `
                 <div class="summary-card">
-                    <div class="summary-label">Total Competitors</div>
+                    <div class="summary-label">Total Teams</div>
                     <div class="summary-value">${summary.total}</div>
                 </div>
                 <div class="summary-card added">
@@ -444,21 +448,24 @@
             document.getElementById('summaryGrid').innerHTML = html;
         }
 
+        // Returns the total number of changes across all change types for a team
         function getTotalChanges(comp) {
             const changes = comp.changes || {};
-            return (changes.added?.length || 0) + 
-                   (changes.removed?.length || 0) + 
-                   (changes.sold?.length || 0) + 
-                   (changes.pending?.length || 0) + 
+            return (changes.added?.length || 0) +
+                   (changes.removed?.length || 0) +
+                   (changes.sold?.length || 0) +
+                   (changes.pending?.length || 0) +
                    (changes.priceChanges?.length || 0);
         }
 
-        function renderCompetitors(data) {
-            const competitors = Object.entries(data.competitors || {})
+        // Render a card for each team, sorted by most changes first.
+        // Teams that failed to fetch are filtered out.
+        function renderTeams(data) {
+            const teams = Object.entries(data.teams || {})
                 .filter(([_, comp]) => comp.success !== false)
                 .sort((a, b) => getTotalChanges(b[1]) - getTotalChanges(a[1]));
 
-            const html = competitors.map(([name, comp]) => {
+            const html = teams.map(([name, comp]) => {
                 const totalChanges = getTotalChanges(comp);
                 const changes = comp.changes || {};
 
@@ -470,7 +477,7 @@
                                 <div class="change-list">
                                     ${changes.added.slice(0, 3).map(b => `
                                         <div class="change-item">
-                                            <div class="change-boat-title">${b.title}</div>
+                                            <div class="change-player-title">${b.title}</div>
                                             <div class="change-price">${b.price}</div>
                                         </div>
                                     `).join('')}
@@ -521,7 +528,7 @@
                                 <div class="change-list">
                                     ${changes.priceChanges.slice(0, 3).map(c => `
                                         <div class="change-item">
-                                            <div class="change-boat-title">${c.boat.title}</div>
+                                            <div class="change-player-title">${c.player.title}</div>
                                             <div class="change-price">${c.oldPrice} → ${c.newPrice}</div>
                                         </div>
                                     `).join('')}
@@ -530,44 +537,44 @@
                             </div>
                         ` : ''}
 
-                        ${comp.boats && comp.boats.length > 0 ? `
+                        ${comp.players && comp.players.length > 0 ? `
                             <div style="grid-column: 1 / -1;">
-                                <h4 style="margin-bottom: 1rem;">All Boats (${comp.boats.length})</h4>
-                                <table class="boats-table">
+                                <h4 style="margin-bottom: 1rem;">All Players (${comp.players.length})</h4>
+                                <table class="players-table">
                                     <thead>
                                         <tr>
-                                            <th>Boat</th>
-                                            <th>Price</th>
+                                            <th>Player</th>
+                                            <th>Value</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        ${comp.boats.slice(0, 10).map(boat => `
+                                        ${comp.players.slice(0, 10).map(player => `
                                             <tr>
-                                                <td>${boat.title}</td>
-                                                <td>${boat.price}</td>
+                                                <td>${player.title}</td>
+                                                <td>${player.value}</td>
                                                 <td>
-                                                    <span class="status-badge ${boat.soldStatus}">
-                                                        ${boat.soldStatus}
+                                                    <span class="status-badge ${player.soldStatus}">
+                                                        ${player.soldStatus}
                                                     </span>
                                                 </td>
                                             </tr>
                                         `).join('')}
                                     </tbody>
                                 </table>
-                                ${comp.boats.length > 10 ? `<p style="font-size: 0.875rem; color: #9ca3af; margin-top: 1rem;">+${comp.boats.length - 10} more boats</p>` : ''}
+                                ${comp.players.length > 10 ? `<p style="font-size: 0.875rem; color: #9ca3af; margin-top: 1rem;">+${comp.players.length - 10} more players</p>` : ''}
                             </div>
                         ` : ''}
                     </div>
                 ` : '';
 
                 return `
-                    <div class="competitor-card" id="card-${name}">
-                        <div class="competitor-header" onclick="toggleCard('${name}')">
+                    <div class="team-card" id="card-${name}">
+                        <div class="team-header" onclick="toggleCard('${name}')">
                             <div>
-                                <div class="competitor-name">${name}</div>
-                                <div class="competitor-info">
-                                    ${comp.boats?.length || 0} boats
+                                <div class="team-name">${name}</div>
+                                <div class="team-info">
+                                    ${comp.players?.length || 0} players
                                     ${totalChanges > 0 ? `<span class="stat warning">⚠️ ${totalChanges} changes</span>` : ''}
                                 </div>
                             </div>
@@ -578,9 +585,10 @@
                 `;
             }).join('');
 
-            document.getElementById('competitorsGrid').innerHTML = html;
+            document.getElementById('teamsGrid').innerHTML = html;
         }
 
+        // Toggle expand/collapse of a team card's changes grid
         function toggleCard(name) {
             const card = document.getElementById(`card-${name}`);
             card.classList.toggle('expanded');
@@ -590,6 +598,7 @@
             }
         }
 
+        // Pull fresh data from the API and re-render the full page
         async function refreshData() {
             document.getElementById('loading').classList.remove('hide');
             document.getElementById('content').classList.add('hide');
@@ -599,7 +608,7 @@
             if (data) {
                 document.getElementById('timestamp').textContent = `Last updated: ${formatDate(data.timestamp || new Date())}`;
                 renderSummary(data);
-                renderCompetitors(data);
+                renderTeams(data);
                 document.getElementById('loading').classList.add('hide');
                 document.getElementById('content').classList.remove('hide');
             } else {
@@ -607,6 +616,8 @@
             }
         }
 
+        // Trigger a monitor run on the server, then refresh after a short delay
+        // to give the server time to complete before re-fetching data
         async function runMonitor() {
             const button = event.target;
             button.disabled = true;
@@ -615,7 +626,7 @@
             try {
                 const response = await fetch('/api/monitor/run', { method: 'POST' });
                 if (!response.ok) throw new Error('Monitor run failed');
-                
+
                 setTimeout(() => {
                     refreshData();
                     button.disabled = false;

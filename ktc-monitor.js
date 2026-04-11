@@ -101,10 +101,8 @@ Top Cheddar:
 // CONFIGURATION
 // ============================================
 
-// KTC Superflex rankings (format=1) — used ONLY for:
-//   - Value Changes threshold report (±250+)
-//   - New Players in Rankings report
-// These values are superflex format. Do NOT use for trades, AI analysis, or team reports.
+// KTC rankings (format=1) — matches oneQBValues from the KTC roster page.
+// Used for value change detection, AI analysis, team reports, and trending arrows.
 const KTC_CONFIG = {
   name: "KTC Dynasty Rankings",
   url: 'https://keeptradecut.com/dynasty-rankings?page=0&filters=QB|WR|RB|TE|RDP&format=1',
@@ -116,35 +114,16 @@ const KTC_CONFIG = {
   }
 };
 
-// KTC 1QB rankings (format=2) — used for:
-//   - AI trade analysis (oneQbPlayerValues.json → PLAYER_VALUES in prompt)
-//   - Trade value comparisons
-//   - Team reports and Moonshiners trending up/down
-const KTC_1QB_FORMAT = 2;
-
 // Roster URL — timestamp param ensures fresh data each fetch
 // Used for each team's player roster. Player values pulled as 1QB (oneQBValues field).
 const ROSTER_URL = () =>
   `https://keeptradecut.com/dynasty/power-rankings/team-breakdown?leagueId=1319880534624591872&platform=2&team=180481036336381952&t=${Date.now()}`;
 
 // ============================================
-// CONFIGURATION
-// ============================================
-// Subtract this from QB values to normalize for 1QB league
-const QB_1QB_ADJUSTMENT = 0;
-
-function adjustedValue(player) {
-  return player.position === 'QB'
-    ? Math.max(0, player.value + QB_1QB_ADJUSTMENT)
-    : player.value;
-}
-
-// ============================================
 // DATABASE SETUP
 // ============================================
 const DATA_DIR = path.join(__dirname, 'data');
-const DB_FILE = path.join(DATA_DIR, 'playerValues.json');         // superflex — value change detection only
-const ONE_QB_DB_FILE = path.join(DATA_DIR, 'oneQbPlayerValues.json'); // 1QB — trades, AI analysis, team reports
+const DB_FILE = path.join(DATA_DIR, 'playerValues.json');
 const ROSTERS_FILE = path.join(DATA_DIR, 'leagueRosters.json');
 
 // Ensure data directory exists
@@ -188,26 +167,6 @@ function saveDatabase(data) {
   fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
 }
 
-// ── 1QB player values (trades, AI analysis, team reports) ─────────────────
-
-function initOneQbDatabase() {
-  if (!fs.existsSync(ONE_QB_DB_FILE)) {
-    fs.writeFileSync(ONE_QB_DB_FILE, JSON.stringify({ lastUpdated: null, players: [] }, null, 2));
-  }
-}
-
-function getOneQbDatabase() {
-  try {
-    return JSON.parse(fs.readFileSync(ONE_QB_DB_FILE, 'utf8'));
-  } catch (error) {
-    console.error('Error reading 1QB database:', error.message);
-    return { lastUpdated: null, players: [] };
-  }
-}
-
-function saveOneQbDatabase(data) {
-  fs.writeFileSync(ONE_QB_DB_FILE, JSON.stringify(data, null, 2));
-}
 
 // ============================================
 // player PARSING FUNCTIONS
@@ -217,7 +176,7 @@ function saveOneQbDatabase(data) {
  * Create unique player ID from name only
  * Value is excluded so the same player is tracked across value changes
  */
-function getplayerId(name) {
+function getPlayerId(name) {
   return name.replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
 }
 
@@ -225,7 +184,7 @@ function getplayerId(name) {
  * Parse individual player card from HTML
  * Extracts player name, value, and link from a single .onePlayer element
  */
-function parseplayer($, playerElement) {
+function parsePlayer($, playerElement) {
   try {
     const $el = $(playerElement);
 
@@ -237,7 +196,7 @@ function parseplayer($, playerElement) {
     const value = parseInt(valueText, 10) || 0;
 
     return {
-      id: getplayerId(name),
+      id: getPlayerId(name),
       name,
       link,
       value
@@ -284,7 +243,7 @@ function buildRoster(team, playersMap) {
     if (!p) return;
     const value = p.oneQBValues?.value ?? 0;
     const link = `https://keeptradecut.com/dynasty-rankings/players/${p.slug}`;
-    players.push({ id: getplayerId(p.playerName), name: p.playerName, position: p.position, value, link });
+    players.push({ id: getPlayerId(p.playerName), name: p.playerName, position: p.position, value, link });
   });
   return players;
 }
@@ -326,10 +285,9 @@ async function fetchAllTeams(leagueData) {
 
     const teams = leagueTeams.map(team => {
       const players = buildRoster(team, playersMap)
-        .map(p => ({ ...p, adjustedValue: adjustedValue(p) }))
-        .sort((a, b) => b.adjustedValue - a.adjustedValue);
+        .sort((a, b) => b.value - a.value);
 
-      const totalValue = players.reduce((sum, p) => sum + p.adjustedValue, 0);
+      const totalValue = players.reduce((sum, p) => sum + p.value, 0);
 
       return {
         teamId: team.teamId,
@@ -386,7 +344,7 @@ async function fetchPage(pageNum, format = 1) {
     }
     
     $container.find(KTC_CONFIG.selectors.playerCard).each((idx, playerEl) => {
-      const player = parseplayer($, playerEl);
+      const player = parsePlayer($, playerEl);
       if (player && player.name) {
         players.push(player);
       }
@@ -413,13 +371,13 @@ async function fetchAllPages(format = 1) {
     console.log(`\n📊 Fetching all pages for ${KTC_CONFIG.name} (${label})...`);
 
     const MAX_PAGES = 20;
-    let allplayers = [];
-    let seenplayerIds = new Set();
+    let allPlayers = [];
+    let seenPlayerIds = new Set();
     let pagesFetched = 0;
 
     for (let pageNum = 0; pageNum < MAX_PAGES; pageNum++) {
       const pageData = await fetchPage(pageNum, format);
-      const pageplayers = pageData.players;
+      const pagePlayers = pageData.players;
       pagesFetched++;
 
       if (!pageData.containerFound) {
@@ -427,7 +385,7 @@ async function fetchAllPages(format = 1) {
         return { players: [], containerFound: false, snippet: pageData.snippet };
       }
 
-      if (pageplayers.length === 0) {
+      if (pagePlayers.length === 0) {
         console.log(`⚠️ Page ${pageNum} returned 0 players — stopping`);
         break;
       }
@@ -435,10 +393,10 @@ async function fetchAllPages(format = 1) {
       let newCount = 0;
       let dupCount = 0;
 
-      pageplayers.forEach(player => {
-        if (!seenplayerIds.has(player.id)) {
-          allplayers.push(player);
-          seenplayerIds.add(player.id);
+      pagePlayers.forEach(player => {
+        if (!seenPlayerIds.has(player.id)) {
+          allPlayers.push(player);
+          seenPlayerIds.add(player.id);
           newCount++;
         } else {
           dupCount++;
@@ -448,14 +406,14 @@ async function fetchAllPages(format = 1) {
       console.log(`   📦 Page ${pageNum}: ${newCount} new, ${dupCount} duplicates`);
 
       // All duplicates means we've looped back to a page we've already seen
-      if (dupCount === pageplayers.length) {
+      if (dupCount === pagePlayers.length) {
         console.warn(`⚠️ Page ${pageNum} was all duplicates — stopping`);
         break;
       }
     }
 
-    console.log(`\n✅ Fetching complete: ${allplayers.length} unique players across ${pagesFetched} pages`);
-    return { players: allplayers, containerFound: true };
+    console.log(`\n✅ Fetching complete: ${allPlayers.length} unique players across ${pagesFetched} pages`);
+    return { players: allPlayers, containerFound: true };
 
   } catch (error) {
     console.error(`❌ Error fetching pages:`, error.message);
@@ -476,38 +434,38 @@ const VALUE_CHANGE_THRESHOLD = 250;
  * Removed players are not reported but are automatically dropped
  * from playerValues.json since the DB is fully replaced each run.
  */
-function detectChanges(oldplayers, newplayers) {
+function detectChanges(oldPlayers, newPlayers) {
   const changes = {
     added: [],
     valueChanges: []
   };
 
   // If no old data exists, everything is "new" — skip email noise
-  if (!oldplayers || oldplayers.length === 0) {
+  if (!oldPlayers || oldPlayers.length === 0) {
     return changes;
   }
 
-  const oldMap = new Map(oldplayers.map(p => [p.id, p]));
+  const oldMap = new Map(oldPlayers.map(p => [p.id, p]));
 
   // Find added players (in new but not in old)
-  newplayers.forEach(player => {
+  newPlayers.forEach(player => {
     if (!oldMap.has(player.id)) {
       changes.added.push(player);
     }
   });
 
   // Find value changes if player value goes up or down by greater than 250
-  newplayers.forEach(newplayer => {
-    const oldplayer = oldMap.get(newplayer.id);
-    if (oldplayer) {
-      const diff = newplayer.value - oldplayer.value;
+  newPlayers.forEach(newPlayer => {
+    const oldPlayer = oldMap.get(newPlayer.id);
+    if (oldPlayer) {
+      const diff = newPlayer.value - oldPlayer.value;
       if (Math.abs(diff) > VALUE_CHANGE_THRESHOLD) {
         changes.valueChanges.push({
-          name: newplayer.name,
-          oldValue: oldplayer.value,
-          newValue: newplayer.value,
+          name: newPlayer.name,
+          oldValue: oldPlayer.value,
+          newValue: newPlayer.value,
           diff,
-          link: newplayer.link
+          link: newPlayer.link
         });
       }
     }
@@ -527,7 +485,7 @@ function detectChanges(oldplayers, newplayers) {
  * Send league roster data + ANALYST_PROMPT to Claude and return the response text.
  * Returns null if ANTHROPIC_API_KEY is not set or the call fails.
  */
-async function fetchAIAnalysis(myTeam, allTeams, oneQbPlayers) {
+async function fetchAIAnalysis(myTeam, allTeams, players) {
   if (!process.env.ANTHROPIC_API_KEY) {
     console.warn('⚠️ ANTHROPIC_API_KEY not set, skipping AI analysis');
     return null;
@@ -540,12 +498,12 @@ async function fetchAIAnalysis(myTeam, allTeams, oneQbPlayers) {
     // Build league roster data — all 12 teams with every player and their adjusted value
     const leagueRosterData = allTeams.map(team => {
       const marker = team.name === myTeam.name ? ' ← MY TEAM' : '';
-      const players = team.players.map(p => `  ${p.position} ${p.name}: ${p.adjustedValue.toLocaleString()}`).join('\n');
+      const players = team.players.map(p => `  ${p.position} ${p.name}: ${p.value.toLocaleString()}`).join('\n');
       return `${team.name}${marker} [Total: ${team.totalValue.toLocaleString()}]\n${players}`;
     }).join('\n\n');
 
     // Build a flat player values lookup from 1QB values (all players, not just rostered)
-    const playerValues = oneQbPlayers
+    const playerValues = players
       .map(p => `${p.name}: ${p.value.toLocaleString()}`)
       .join('\n');
 
@@ -578,7 +536,7 @@ async function fetchAIAnalysis(myTeam, allTeams, oneQbPlayers) {
  * Build HTML email content.
  * Always starts with the full roster section, then league-wide value changes and new players.
  */
-function buildEmailHTML(changes, rosterPlayers, previousOneQbPlayersMap, aiAnalysis) {
+function buildEmailHTML(changes, rosterPlayers, previousPlayersMap, aiAnalysis) {
   let html = `
     <h2 style="color: #0066cc;">📊 ${KTC_CONFIG.name}</h2>
     <p style="font-size: 14px; color: #666;">Update checked at ${new Date().toLocaleString()}</p>
@@ -601,8 +559,7 @@ function buildEmailHTML(changes, rosterPlayers, previousOneQbPlayersMap, aiAnaly
       html += `<p style="margin: 16px 0 6px; font-size: 12px; font-weight: bold; color: #999; text-transform: uppercase; letter-spacing: 1px;">${position}</p>`;
 
       players.forEach(player => {
-        const displayValue = adjustedValue(player);
-        const prev = previousOneQbPlayersMap.get(player.id);
+        const prev = previousPlayersMap.get(player.id);
         let changeHtml = '';
 
         if (!prev) {
@@ -624,7 +581,7 @@ function buildEmailHTML(changes, rosterPlayers, previousOneQbPlayersMap, aiAnaly
             <span style="font-weight:bold;">
               <a href="${player.link || '#'}" style="color:#0066cc; text-decoration:none;">${player.name}</a>
             </span>
-            <span style="color:#555; font-size:13px; margin-left:8px;">${displayValue.toLocaleString()}${changeHtml}</span>
+            <span style="color:#555; font-size:13px; margin-left:8px;">${player.value.toLocaleString()}${changeHtml}</span>
           </div>
         `;
       });
@@ -729,20 +686,14 @@ async function monitor() {
   console.log('📊 Starting KTC Dynasty Rankings monitoring...');
   console.log('============================================================');
 
-  // Step 1: Initialize and load databases
+  // Step 1: Initialize and load database
   initDatabase();
-  initOneQbDatabase();
   const db = getDatabase();
-  const previousplayers = db.players || [];
-  console.log(`📚 Loaded ${previousplayers.length} superflex players from previous run`);
+  const previousPlayers = db.players || [];
+  const previousPlayersMap = new Map(previousPlayers.map(p => [p.id, p]));
+  console.log(`📚 Loaded ${previousPlayers.length} players from previous run`);
 
-  // Load previous 1QB values for roster trending (▲/▼) in the email
-  const oneQbDb = getOneQbDatabase();
-  const previousOneQbPlayers = oneQbDb.players || [];
-  const previousOneQbPlayersMap = new Map(previousOneQbPlayers.map(p => [p.id, p]));
-  console.log(`📚 Loaded ${previousOneQbPlayers.length} 1QB players from previous run`);
-
-  // Step 2: Fetch league page data once, then rankings (both formats) in parallel
+  // Step 2: Fetch league page data and rankings in parallel
   let leagueData;
   try {
     leagueData = await fetchLeaguePageData();
@@ -751,9 +702,8 @@ async function monitor() {
     leagueData = { leagueTeams: [], playersMap: new Map() };
   }
 
-  const [rankingsResult, oneQbRankingsResult, rosterPlayers] = await Promise.all([
-    fetchAllPages(1),                  // superflex — value change threshold detection only
-    fetchAllPages(KTC_1QB_FORMAT),     // 1QB — trades, AI analysis, team reports
+  const [rankingsResult, rosterPlayers] = await Promise.all([
+    fetchAllPages(1),
     fetchMyRoster(leagueData)
   ]);
 
@@ -774,17 +724,16 @@ async function monitor() {
     return;
   }
 
-  const currentplayers = rankingsResult.players;
-  const currentOneQbPlayers = oneQbRankingsResult.players;
+  const currentPlayers = rankingsResult.players;
 
-  if (currentplayers.length === 0) {
+  if (currentPlayers.length === 0) {
     console.error('❌ No players fetched, aborting to avoid data loss');
     return;
   }
 
-  // Step 3: Detect league-wide changes (superflex values only)
+  // Step 3: Detect value changes
   console.log('\n🔍 Detecting changes...');
-  const changes = detectChanges(previousplayers, currentplayers);
+  const changes = detectChanges(previousPlayers, currentPlayers);
 
   console.log(`   👤 Roster players: ${rosterPlayers.length}`);
   console.log(`   ✨ New in rankings: ${changes.added.length}`);
@@ -793,20 +742,15 @@ async function monitor() {
   // Step 4: Run AI analysis + send email
   const allTeams = await fetchAllTeams(leagueData);
   const myTeam = allTeams.find(t => t.name === TeamName) ?? allTeams[0];
-  const aiAnalysis = await fetchAIAnalysis(myTeam, allTeams, currentOneQbPlayers);
-  const htmlContent = buildEmailHTML(changes, rosterPlayers, previousOneQbPlayersMap, aiAnalysis);
+  const aiAnalysis = await fetchAIAnalysis(myTeam, allTeams, currentPlayers);
+  const htmlContent = buildEmailHTML(changes, rosterPlayers, previousPlayersMap, aiAnalysis);
   await sendEmail(htmlContent);
 
-  // Step 5: Save updated player values (both formats)
-  console.log(`💾 Saving ${currentplayers.length} superflex players to playerValues.json...`);
-  db.players = currentplayers;
+  // Step 5: Save updated player values
+  console.log(`💾 Saving ${currentPlayers.length} players to playerValues.json...`);
+  db.players = currentPlayers;
   db.lastUpdated = new Date().toISOString();
   saveDatabase(db);
-
-  if (currentOneQbPlayers.length > 0) {
-    console.log(`💾 Saving ${currentOneQbPlayers.length} 1QB players to oneQbPlayerValues.json...`);
-    saveOneQbDatabase({ players: currentOneQbPlayers, lastUpdated: new Date().toISOString() });
-  }
 
   console.log('============================================================');
   console.log('✅ Monitor run completed successfully');
