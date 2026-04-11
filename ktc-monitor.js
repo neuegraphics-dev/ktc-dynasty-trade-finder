@@ -1,5 +1,4 @@
 const axios = require('axios');
-const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
 const nodemailer = require('nodemailer');
@@ -105,13 +104,7 @@ Top Cheddar:
 // Used for value change detection, AI analysis, team reports, and trending arrows.
 const KTC_CONFIG = {
   name: "KTC Dynasty Rankings",
-  url: 'https://keeptradecut.com/dynasty-rankings?page=0&filters=QB|WR|RB|TE|RDP&format=1',
-  selectors: {
-    parentContainer: '#rankings-page-rankings',
-    playerCard: '.onePlayer',
-    name: '.player-name p a',
-    value: '.single-ranking .value p'
-  }
+  url: 'https://keeptradecut.com/dynasty-rankings?page=0&filters=QB|WR|RB|TE|RDP&format=1'
 };
 
 // Roster URL — timestamp param ensures fresh data each fetch
@@ -178,33 +171,6 @@ function saveDatabase(data) {
  */
 function getPlayerId(name) {
   return name.replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
-}
-
-/**
- * Parse individual player card from HTML
- * Extracts player name, value, and link from a single .onePlayer element
- */
-function parsePlayer($, playerElement) {
-  try {
-    const $el = $(playerElement);
-
-    const $nameLink = $el.find(KTC_CONFIG.selectors.name).first();
-    const name = $nameLink.text().trim();
-    const linkHref = $nameLink.attr('href');
-    const link = linkHref ? (linkHref.startsWith('http') ? linkHref : 'https://keeptradecut.com' + linkHref) : null;
-    const valueText = $el.find(KTC_CONFIG.selectors.value).first().text().trim();
-    const value = parseInt(valueText, 10) || 0;
-
-    return {
-      id: getPlayerId(name),
-      name,
-      link,
-      value
-    };
-  } catch (error) {
-    console.error('Error parsing player:', error.message);
-    return null;
-  }
 }
 
 
@@ -322,34 +288,37 @@ async function fetchAllTeams(leagueData) {
 async function fetchPage(pageNum, format = 1) {
   try {
     const url = `https://keeptradecut.com/dynasty-rankings?page=${pageNum}&filters=QB|WR|RB|TE|RDP&format=${format}`;
-    
+
     console.log(`Fetching page ${pageNum}...`);
     const response = await axios.get(url, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
       }
     });
-    
-    const html = response.data;
-    const $ = cheerio.load(html);
-    
-    const players = [];
-    const $container = $(KTC_CONFIG.selectors.parentContainer);
 
-    if ($container.length === 0) {
-      console.warn(`⚠️ Parent container not found on page ${pageNum}`);
-      // Return a snippet of the HTML to help diagnose what was actually returned
-      const snippet = $.html().slice(0, 2000);
-      return { players: [], containerFound: false, snippet };
+    const html = response.data;
+
+    // KTC now embeds all player data as an inline JS variable — extract it directly
+    const playersArrayMatch = html.match(/var playersArray = (\[.*?\]);/s);
+    if (!playersArrayMatch) {
+      console.warn(`⚠️ playersArray variable not found on page ${pageNum}`);
+      return { players: [], containerFound: false, snippet: html.slice(0, 2000) };
     }
-    
-    $container.find(KTC_CONFIG.selectors.playerCard).each((idx, playerEl) => {
-      const player = parsePlayer($, playerEl);
-      if (player && player.name) {
-        players.push(player);
-      }
-    });
-    
+
+    const playersArray = JSON.parse(playersArrayMatch[1]);
+    const players = playersArray
+      .map(p => {
+        const valObj = format === 2 ? p.superflexValues : p.oneQBValues;
+        const value = valObj?.value ?? 0;
+        return {
+          id: getPlayerId(p.playerName),
+          name: p.playerName,
+          link: p.slug ? `https://keeptradecut.com/dynasty-rankings/players/${p.slug}` : null,
+          value
+        };
+      })
+      .filter(p => p.name);
+
     console.log(`✅ Found ${players.length} players on page ${pageNum}`);
     return { players, containerFound: true };
 

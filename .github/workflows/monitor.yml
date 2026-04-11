@@ -39,6 +39,6 @@ jobs:
           git stash
           git pull --rebase origin ${GITHUB_REF#refs/heads/}
           git stash pop || true
-          git add data/playerValues.json data/leagueRosters.json data/oneQbPlayerValues.json
-          git diff --staged --quiet || git commit -m "Update playerValues.json, leagueRosters.json, oneQbPlayerValues.json"
+          git add data/playerValues.json data/leagueRosters.json
+          git diff --staged --quiet || git commit -m "Update playerValues.json, leagueRosters.json"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${GITHUB_REF#refs/heads/}
