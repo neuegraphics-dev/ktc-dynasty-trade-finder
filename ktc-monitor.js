@@ -367,8 +367,7 @@ async function fetchPage(pageNum, format = 1) {
  */
 async function fetchAllPages(format = 1) {
   try {
-    const label = format === KTC_1QB_FORMAT ? '1QB' : 'Superflex';
-    console.log(`\n📊 Fetching all pages for ${KTC_CONFIG.name} (${label})...`);
+    console.log(`\n📊 Fetching all pages for ${KTC_CONFIG.name}...`);
 
     const MAX_PAGES = 20;
     let allPlayers = [];
