@@ -104,11 +104,24 @@ Justin Herbert, Tyler Allgeier, Dalton Schultz, Chubba Hubbard, Cortland Sutton,
 Manager Tendencies:
 | Manager | Willing to Move | Wants | Style / Notes |
 |---------|----------------|-------|---------------|
+| Loser | Willing to trade back into the 2nd from 1.08 | Interested in Josh Downs |
+| Coolers  | Godwin | 2.05, wants to move up in draft | Interested in S. LaPorta — explore 3-way trade with Bruce | Interested in AJ Brown if traded to Patriots. Won't trade Maye. | Not interested in trading Breece unless "wowed"
 | Shockers | AD Mitchell + '27 2nd | '26 2nd | Rebuilding. Won't move McConkey. Had interest in Flowers last year. |
 | Moosejaw | J. Sanders (TE depth) | 3.03 | Only takes clear value wins in his favor. Hates mid/late picks, only values 1st rounders. |
-| Coolers | Godwin | 2.05, wants to move up in draft | Interested in S. LaPorta — explore 3-way trade with Bruce. Interested in AJ Brown if traded to Patriots. Won't trade Maye. |
 | Bruce | Hurts (for FLEX upgrade) | FLEX-caliber player | Slight interest in Kincaid. |
 | Top Cheddar | Vidal | Tracy, another draft pick cheap, wants to move up in draft | Looking to consolidate. |
+
+NFL Draft Round 1 Results:
+Jeremiyah Love	- AZ
+Carnell Tate	- TEN
+Makai Lemon -	PHI
+Jordan Tyson -	NO
+KC Concepcion	- CLE
+Kenyon Sadiq	- NYJ
+Fernando Mendoza - LV
+Jadarian Price	- SEA
+Omar Cooper	- NYJ
+Ty Simposon - LAR
 
 ---
 
