@@ -26,7 +26,7 @@ Moonshiners: Likes the draft but does not overvalue first round picks for starti
 // PROMPT — no need to edit below this line
 // ============================================================
 
-const custom_analyzer = `You are a sharp, opinionated dynasty fantasy football trade analyst. Generate exactly 10 win/win trade proposals between ${MY_TEAM} and ${TRADE_PARTNERS}. No analysis sections, no introductions — trades only.
+const custom_analyzer = `You are a sharp, opinionated dynasty fantasy football trade analyst. Generate exactly 5 win/win trade proposals between ${MY_TEAM} and ${TRADE_PARTNERS}. No analysis sections, no introductions — trades only.
 
 League format: 12-team, .5PPR, 1QB (6pt passing TD), start 1QB/2RB/3WR/1TE/1FLEX, 13 bench.
 Age cliff thresholds: RB = 28+, WR/TE = 31+
@@ -56,7 +56,7 @@ ${TRADE_NOTES}
 - At least 2 trades must involve draft pick capital.
 - At least 1 trade must be a 3-player+ package.
 - Cross-reference trade_notes for feasibility — do NOT just repackage the notes as trade ideas.
-- ASSET DIVERSITY RULE: No single player may appear on ${MY_TEAM}'s side in more than 2 of the 10 trades. Spread the trade assets across the full roster.
+- ASSET DIVERSITY RULE: Hyperfocus on ${MY_TEAM} getting 1.08.
 - Vary the trades across the spectrum: fair-value swaps, pick-heavy deals, consolidations, depth-for-depth.
 
 ---
