@@ -19,7 +19,7 @@ Manager Tendencies:
 
 Loser: Doesn't like the 2026 draft, wants to move back or get a player for 1.08. Likes 2027 draft year more for higher upside.
 
-Moonshiners: Likes the draft but does not overvalue first round picks for starting roster pieces. Interested in moving up in the 2026 draft. Desperately need RB3 upgrade. Looking for startable depth pieces.
+Moonshiners: Likes the draft but does not overvalue first round picks for starting roster pieces. Interested in moving up in the 2026 draft. Desperately need RB3 upgrade. Looking for startable depth pieces. Wants to focus on getting 1.08 before he sells it to someone else.
 `;
 
 // ============================================================
@@ -102,6 +102,6 @@ Then for each of the 10 trades, output one card:
 Close with:
 </td></tr></table></body></html>
 
-**Keep response within 8,000 tokens.**`;
+**You have 8,000 output tokens. Use them — all 10 trades are required. Do not stop early.**`;
 
 module.exports = custom_analyzer;
