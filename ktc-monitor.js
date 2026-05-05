@@ -11,8 +11,14 @@ require('dotenv').config();
 // Edit this to change what the AI analyzes.
 // It will always run with current league data as context.
 // ============================================
-const league_analyzer = require('./prompts/league_analyzer');
-const ANALYST_PROMPT = league_analyzer;
+
+// LEAGUE ANALYZER
+// const league_analyzer = require('./prompts/league_analyzer');
+// const ANALYST_PROMPT = league_analyzer;
+
+// CUSTOM ANALYZER
+const custom_analyzer = require('./prompts/custom_analyzer');
+const ANALYST_PROMPT = custom_analyzer;
 
 
 // ============================================
